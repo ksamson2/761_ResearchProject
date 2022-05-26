@@ -29,7 +29,7 @@ public class SpawnObstacles : MonoBehaviour
     {
         if (Time.time > spawnRate && shouldSpawnObstacles)
         {
-            // Spawn();
+            Spawn();
             spawnRate = Time.time + timeBetweenSpawn;
         }
     }
@@ -50,7 +50,7 @@ public class SpawnObstacles : MonoBehaviour
             Instantiate(MindfulObjectList[0], transform.position + new Vector3(xposition, ySpawnValue, 0), transform.rotation);
             for (int i = 0; i < 4; i++)
             {
-                Instantiate(Marshmallo, transform.position + new Vector3(xposition + i  , ySpawnValue - 4 , 0), transform.rotation);
+                Instantiate(Marshmallo, transform.position + new Vector3(xposition + i, ySpawnValue + 2 , 0), transform.rotation);
             }
             yield return new WaitForSeconds(mindfulCloudSpawnDelay);
 

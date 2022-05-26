@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3457044986902323528}
   - component: {fileID: 8047619089050421241}
   - component: {fileID: 7133520778796235751}
+  - component: {fileID: 8786521606486331953}
   m_Layer: 0
   m_Name: Marshmallo
   m_TagString: MarshmallowPoint
@@ -109,3 +110,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.214846, y: 2.6897788}
   m_EdgeRadius: 0
+--- !u!50 &8786521606486331953
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906765253557375979}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
