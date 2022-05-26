@@ -4,23 +4,33 @@ using UnityEngine;
 
 public class SpawnObstacles : MonoBehaviour
 {
-    List<GameObject> MindfulObjectList = new List<GameObject>();
+    [System.Serializable]
+    public class MindfulnessObject
+    {
+        public GameObject GameObject;
+        public float MinimumY;
+        public float MaximumY;
+        public int MarshmallowCount;
+    }
+
+    public List<MindfulnessObject> MindfulnessObjects;
+
     public GameObject obstacle;
-    public GameObject InhaleCloud;
-    public GameObject ExhaleCloud;
     public GameObject Marshmallo;
     public float xSpawnRange;
     public float minXSpawnRange;
-    public float ySpawnValue;
+
     public float timeBetweenSpawn;
     public float mindfulSpawnRate;
     private float mindfulCloudSpawnDelay = 4;
     private float spawnRate;
     private bool shouldSpawnObstacles = true;
+    public float spacingBetweenMarshmallows = 1.5f;
+    public float spacingBetweenClouds = 5f;
 
     private void Start()
     {
-        LoadObstacles();
+
         //InvokeRepeating("SpawnMindfulObstacles", beginSpawn, mindfulSpawnRate);
         StartCoroutine(SpawnMindfulObjects());
     }
@@ -47,21 +57,21 @@ public class SpawnObstacles : MonoBehaviour
         {
             shouldSpawnObstacles = false;
 
-            Instantiate(MindfulObjectList[0], transform.position + new Vector3(xposition, ySpawnValue, 0), transform.rotation);
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < MindfulnessObjects.Count; i++)
             {
-                Instantiate(Marshmallo, transform.position + new Vector3(xposition + i, ySpawnValue + 2 , 0), transform.rotation);
+                var mindfulnessObj = MindfulnessObjects[i];
+                var cloudSpawnX = xposition + i * spacingBetweenClouds;
+                var cloudSpawnY = Random.Range(mindfulnessObj.MinimumY, mindfulnessObj.MaximumY);
+                Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
+                for (int marshmallowIndex = 0; marshmallowIndex < mindfulnessObj.MarshmallowCount; marshmallowIndex++)
+                {
+                    Instantiate(Marshmallo, transform.position + new Vector3(cloudSpawnX + marshmallowIndex * spacingBetweenMarshmallows, cloudSpawnY + 2, 0), transform.rotation);
+                }
             }
-            yield return new WaitForSeconds(mindfulCloudSpawnDelay);
-
-            Instantiate(MindfulObjectList[1], transform.position + new Vector3(xposition, ySpawnValue - 4, 0), transform.rotation);
-            yield return new WaitForSeconds(mindfulCloudSpawnDelay);
-
-            Instantiate(MindfulObjectList[2], transform.position + new Vector3(xposition, ySpawnValue, 0), transform.rotation);
-            yield return new WaitForSeconds(mindfulCloudSpawnDelay);
 
             shouldSpawnObstacles = true;
-            yield return new WaitForSeconds(mindfulSpawnRate);
+
+            yield return new WaitForSeconds(16);
         }
     }
 
@@ -78,11 +88,4 @@ public class SpawnObstacles : MonoBehaviour
     //    }
 
     //}
-
-    void LoadObstacles()
-    {
-        MindfulObjectList.Add(InhaleCloud);
-        MindfulObjectList.Add(ExhaleCloud);
-        MindfulObjectList.Add(InhaleCloud);
-    }
 }

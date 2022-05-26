@@ -1410,15 +1410,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae89a3d83cbe51846aa69dce84c87d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MindfulnessObjects:
+  - GameObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
+    MinimumY: 1.5
+    MaximumY: 1.5
+    MarshmallowCount: 4
+  - GameObject: {fileID: 6336393680154833632, guid: 2c98321d06d2d1045aaa93516577d66b, type: 3}
+    MinimumY: -0.5
+    MaximumY: -0.5
+    MarshmallowCount: 4
+  - GameObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
+    MinimumY: 1.5
+    MaximumY: 1.5
+    MarshmallowCount: 8
   obstacle: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
-  InhaleCloud: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
-  ExhaleCloud: {fileID: 6336393680154833632, guid: 2c98321d06d2d1045aaa93516577d66b, type: 3}
   Marshmallo: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
   xSpawnRange: 7
   minXSpawnRange: 2
-  ySpawnValue: 2
   timeBetweenSpawn: 1.8
   mindfulSpawnRate: 5
+  spacingBetweenMarshmallows: 2
+  spacingBetweenClouds: 24
 --- !u!4 &1888781988
 Transform:
   m_ObjectHideFlags: 0
