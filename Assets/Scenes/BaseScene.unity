@@ -804,7 +804,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.12941177, g: 0.0627451, b: 0.13725491, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdf6b65c6afa8841963080f7e31ff11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marshmallowPoints: 0
 --- !u!1 &1408837555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,11 +1413,12 @@ MonoBehaviour:
   obstacle: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
   InhaleCloud: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
   ExhaleCloud: {fileID: 6336393680154833632, guid: 2c98321d06d2d1045aaa93516577d66b, type: 3}
+  Marshmallo: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
   xSpawnRange: 7
   minXSpawnRange: 2
   ySpawnValue: 2
-  timeBetweenSpawn: 1.7
-  mindfulSpawnRate: 3
+  timeBetweenSpawn: 1.8
+  mindfulSpawnRate: 5
 --- !u!4 &1888781988
 Transform:
   m_ObjectHideFlags: 0
@@ -1502,8 +1504,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a6dba620e11f8ff4189b54252cb49f88, type: 3}
-  m_Color: {r: 0.026254892, g: 0.04495508, b: 0.09433961, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0144c10139fc13a4484c50cccf0a2103, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1597,8 +1599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031933651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6317, y: 1.3, z: 0}
-  m_LocalScale: {x: 25.318033, y: 13.176521, z: 1}
+  m_LocalPosition: {x: 2.141, y: -0.1086, z: 0}
+  m_LocalScale: {x: 29.829763, y: 10.050064, z: 1}
   m_Children:
   - {fileID: 919616576}
   m_Father: {fileID: 207210559}

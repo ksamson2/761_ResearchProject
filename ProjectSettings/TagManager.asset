@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Borders
   - Obstacle
+  - Cloud
+  - MarshmallowPoint
   layers:
   - Default
   - TransparentFX

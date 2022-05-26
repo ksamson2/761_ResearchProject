@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (collision.gameObject.name == "Ground" || collision.gameObject.tag == "Cloud")
         {
             multiJumpCount = 0;
         }
