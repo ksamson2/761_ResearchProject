@@ -30,8 +30,6 @@ public class SpawnObstacles : MonoBehaviour
 
     private void Start()
     {
-
-        //InvokeRepeating("SpawnMindfulObstacles", beginSpawn, mindfulSpawnRate);
         StartCoroutine(SpawnMindfulObjects());
     }
 
