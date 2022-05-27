@@ -1440,7 +1440,15 @@ MonoBehaviour:
     MinimumY: 1.5
     MaximumY: 1.5
     MarshmallowCount: 8
+  ObstacleObjects:
+  - GameObject: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
+    MinimumY: -4
+    MaximumY: -4
+  - GameObject: {fileID: 904495777615113034, guid: 4bc7d45c471f5454d98f4172e6aed51e, type: 3}
+    MinimumY: -3
+    MaximumY: -3
   obstacle: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
+  DuckObstacle: {fileID: 0}
   Marshmallo: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
   xSpawnRange: 7
   minXSpawnRange: 2

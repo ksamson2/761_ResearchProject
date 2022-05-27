@@ -13,9 +13,19 @@ public class SpawnObstacles : MonoBehaviour
         public int MarshmallowCount;
     }
 
+    [System.Serializable]
+    public class Obstacles
+    {
+        public GameObject GameObject;
+        public float MinimumY;
+        public float MaximumY;
+    }
+
     public List<MindfulnessObject> MindfulnessObjects;
+    public List<Obstacles> ObstacleObjects;
 
     public GameObject obstacle;
+    public GameObject DuckObstacle;
     public GameObject Marshmallo;
     public float xSpawnRange;
     public float minXSpawnRange;
@@ -44,8 +54,12 @@ public class SpawnObstacles : MonoBehaviour
 
     void Spawn()
     {
-        float randomX = Random.Range(minXSpawnRange, xSpawnRange);
-        Instantiate(obstacle, transform.position + new Vector3(randomX, -4, 0), transform.rotation);
+        float RandomX = Random.Range(minXSpawnRange, xSpawnRange);
+
+        int RandomIndex = Random.Range(0, ObstacleObjects.Count);
+        var ObstacleToSpawn = ObstacleObjects[RandomIndex];
+        var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn.MaximumY);
+        Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
     }
 
     IEnumerator SpawnMindfulObjects()
@@ -70,7 +84,7 @@ public class SpawnObstacles : MonoBehaviour
 
             shouldSpawnObstacles = true;
 
-            yield return new WaitForSeconds(16);
+            yield return new WaitForSeconds(24);
         }
     }
 

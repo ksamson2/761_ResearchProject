@@ -27,6 +27,14 @@ public class Player : MonoBehaviour
             }
            
         }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            rigidbody.transform.localScale = new Vector3(0.3f, 0.2f, 1);
+        }
+        else
+        {
+            rigidbody.transform.localScale = new Vector3(0.3f, 0.3f, 1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
