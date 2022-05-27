@@ -25,7 +25,7 @@ public class SpawnObstacles : MonoBehaviour
     private float mindfulCloudSpawnDelay = 4;
     private float spawnRate;
     private bool shouldSpawnObstacles = true;
-    public float spacingBetweenMarshmallows = 1.5f;
+    public float spacingBetweenMarshmallows = 1.6f;
     public float spacingBetweenClouds = 5f;
 
     private void Start()
@@ -63,7 +63,8 @@ public class SpawnObstacles : MonoBehaviour
                 Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
                 for (int marshmallowIndex = 0; marshmallowIndex < mindfulnessObj.MarshmallowCount; marshmallowIndex++)
                 {
-                    Instantiate(Marshmallo, transform.position + new Vector3(cloudSpawnX + marshmallowIndex * spacingBetweenMarshmallows, cloudSpawnY + 2, 0), transform.rotation);
+                    var marshmallowX = cloudSpawnX + (marshmallowIndex * spacingBetweenMarshmallows) -2; 
+                    Instantiate(Marshmallo, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
                 }
             }
 
