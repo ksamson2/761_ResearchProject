@@ -24,32 +24,35 @@ public class SpawnObstacles : MonoBehaviour
     public List<MindfulnessObject> MindfulnessObjects;
     public List<Obstacles> ObstacleObjects;
 
-    public GameObject obstacle;
-    public GameObject DuckObstacle;
     public GameObject Marshmallo;
     public float xSpawnRange;
     public float minXSpawnRange;
 
     public float timeBetweenSpawn;
     public float mindfulSpawnRate;
-    private float mindfulCloudSpawnDelay = 4;
     private float spawnRate;
     private bool shouldSpawnObstacles = true;
     public float spacingBetweenMarshmallows = 1.6f;
     public float spacingBetweenClouds = 5f;
+    public ScoreManager ScoreManager;
 
     private void Start()
     {
         StartCoroutine(SpawnMindfulObjects());
+        ScoreManager = FindObjectOfType<ScoreManager>();
+
     }
 
     void Update()
     {
+        float currentScore = ScoreManager.score;
+        // float currentTimeInSeconds = currentScore % 60;
         if (Time.time > spawnRate && shouldSpawnObstacles)
         {
             Spawn();
             spawnRate = Time.time + timeBetweenSpawn;
         }
+
     }
 
     void Spawn()
@@ -67,8 +70,6 @@ public class SpawnObstacles : MonoBehaviour
         float xposition = 2;
         while (true)
         {
-            shouldSpawnObstacles = false;
-
             for (var i = 0; i < MindfulnessObjects.Count; i++)
             {
                 var mindfulnessObj = MindfulnessObjects[i];
@@ -77,14 +78,12 @@ public class SpawnObstacles : MonoBehaviour
                 Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
                 for (int marshmallowIndex = 0; marshmallowIndex < mindfulnessObj.MarshmallowCount; marshmallowIndex++)
                 {
-                    var marshmallowX = cloudSpawnX + (marshmallowIndex * spacingBetweenMarshmallows) -2; 
+                    var marshmallowX = cloudSpawnX + (marshmallowIndex * spacingBetweenMarshmallows) - 2;
                     Instantiate(Marshmallo, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
                 }
             }
+            yield return new WaitForSeconds(50);
 
-            shouldSpawnObstacles = true;
-
-            yield return new WaitForSeconds(24);
         }
     }
 
