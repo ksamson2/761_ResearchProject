@@ -35,7 +35,6 @@ public class SpawnObstacles : MonoBehaviour
     public float spacingBetweenMarshmallows = 1.6f;
     public float spacingBetweenClouds = 1.5f;
     public ScoreManager ScoreManager;
-    private float TotalObjects = 0;
 
     private void Start()
     {
@@ -67,13 +66,6 @@ public class SpawnObstacles : MonoBehaviour
             var ObstacleToSpawn = ObstacleObjects[RandomIndex];
             var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn.MaximumY);
             Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
-        }
-        else
-        { 
-            if(CurrentTimeInSeconds < 30)
-            {
-                TotalObjects = 0; 
-            }
         }
 
     }

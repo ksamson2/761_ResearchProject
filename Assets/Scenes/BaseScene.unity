@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 12
-  jumpValue: 22
+  jumpValue: 21
   MaxJumpCount: 2
 --- !u!50 &1301423352
 Rigidbody2D:
