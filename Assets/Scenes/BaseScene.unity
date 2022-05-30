@@ -1145,8 +1145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc27e0cababbcc46bbace8d795947ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
-  jumpValue: 18
+  playerSpeed: 12
+  jumpValue: 22
   MaxJumpCount: 2
 --- !u!50 &1301423352
 Rigidbody2D:
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   - GameObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
     MinimumY: 1.5
     MaximumY: 1.5
-    MarshmallowCount: 8
+    MarshmallowCount: 4
   ObstacleObjects:
   - GameObject: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
     MinimumY: -3.7
@@ -1449,12 +1449,12 @@ MonoBehaviour:
     MinimumY: -2
     MaximumY: -2
   Marshmallo: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
-  xSpawnRange: 8
-  minXSpawnRange: 4
+  xSpawnRange: 6
+  minXSpawnRange: 2
   timeBetweenSpawn: 2.4
   mindfulSpawnRate: 5
   spacingBetweenMarshmallows: 2
-  spacingBetweenClouds: 22
+  spacingBetweenClouds: 15
   ScoreManager: {fileID: 0}
 --- !u!4 &1888781988
 Transform:
