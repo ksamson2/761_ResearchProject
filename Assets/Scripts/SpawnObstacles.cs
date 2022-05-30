@@ -35,6 +35,7 @@ public class SpawnObstacles : MonoBehaviour
     public float spacingBetweenMarshmallows = 1.6f;
     public float spacingBetweenClouds = 5f;
     public ScoreManager ScoreManager;
+    private float TotalObjects = 0;
 
     private void Start()
     {
@@ -45,8 +46,8 @@ public class SpawnObstacles : MonoBehaviour
 
     void Update()
     {
-        float currentScore = ScoreManager.score;
-        // float currentTimeInSeconds = currentScore % 60;
+        
+        
         if (Time.time > spawnRate && shouldSpawnObstacles)
         {
             Spawn();
@@ -58,11 +59,26 @@ public class SpawnObstacles : MonoBehaviour
     void Spawn()
     {
         float RandomX = Random.Range(minXSpawnRange, xSpawnRange);
+        float currentScore = ScoreManager.score;
+        float CurrentTimeInSeconds = currentScore % 60;
+        if (TotalObjects < 20)
+        {
+            Debug.Log(TotalObjects);
+            int RandomIndex = Random.Range(0, ObstacleObjects.Count);
+            var ObstacleToSpawn = ObstacleObjects[RandomIndex];
+            var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn.MaximumY);
+            Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
+            TotalObjects++;
 
-        int RandomIndex = Random.Range(0, ObstacleObjects.Count);
-        var ObstacleToSpawn = ObstacleObjects[RandomIndex];
-        var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn.MaximumY);
-        Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
+        }
+        else
+        { 
+            if(CurrentTimeInSeconds < 30)
+            {
+                TotalObjects = 0; 
+            }
+        }
+
     }
 
     IEnumerator SpawnMindfulObjects()
@@ -70,6 +86,7 @@ public class SpawnObstacles : MonoBehaviour
         float xposition = 2;
         while (true)
         {
+            yield return new WaitForSeconds(40);
             for (var i = 0; i < MindfulnessObjects.Count; i++)
             {
                 var mindfulnessObj = MindfulnessObjects[i];
@@ -82,7 +99,7 @@ public class SpawnObstacles : MonoBehaviour
                     Instantiate(Marshmallo, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
                 }
             }
-            yield return new WaitForSeconds(50);
+            // yield return new WaitForSeconds(50);
 
         }
     }
