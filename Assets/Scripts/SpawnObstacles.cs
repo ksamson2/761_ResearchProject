@@ -40,7 +40,7 @@ public class SpawnObstacles : MonoBehaviour
     {
         StartCoroutine(SpawnMindfulObjects());
         ScoreManager = FindObjectOfType<ScoreManager>();
-
+        // TestSpawnBreathingClouds();
     }
 
     void Update()
@@ -68,6 +68,28 @@ public class SpawnObstacles : MonoBehaviour
             Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
         }
 
+    }
+
+    void TestSpawnBreathingClouds()
+    {
+        float xposition = 2; 
+        while (xposition < 500)
+        {
+            for (var i = 0; i < MindfulnessObjects.Count; i++)
+            {
+                var mindfulnessObj = MindfulnessObjects[i];
+                var cloudSpawnX = xposition + i * spacingBetweenClouds;
+                var cloudSpawnY = Random.Range(mindfulnessObj.MinimumY, mindfulnessObj.MaximumY);
+                Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
+                for (int marshmallowIndex = 0; marshmallowIndex < mindfulnessObj.MarshmallowCount; marshmallowIndex++)
+                {
+                    var marshmallowX = cloudSpawnX + (marshmallowIndex * spacingBetweenMarshmallows) - 2;
+                    Instantiate(Marshmallo, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
+                }
+            }
+            xposition += 200; 
+
+        }
     }
 
     IEnumerator SpawnMindfulObjects()

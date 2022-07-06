@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Cloud
   - MarshmallowPoint
+  - Bubble
+  - Text
   layers:
   - Default
   - TransparentFX
