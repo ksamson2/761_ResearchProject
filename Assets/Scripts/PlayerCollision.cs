@@ -5,44 +5,51 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public float marshmallowPoints; 
-    private GameObject player;
-    public GameObject inputField;
-    public GameObject submitThoughtButton;
+    public static float MarshmallowPoints;
+    private GameObject Player;
+    public GameObject InputField;
+    public GameObject SubmitThoughtButtonObject;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        inputField.SetActive(false);
-        submitThoughtButton.SetActive(false);
+        Player = GameObject.FindGameObjectWithTag("Player");
+        
+        InputField.SetActive(false);
+        SubmitThoughtButtonObject.SetActive(false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Obstacle") 
         {
-            // Destroy(player.gameObject);
+            if (MarshmallowPoints >= 12 )
+            {
+                MarshmallowPoints -= 12;
+            }
+            else
+            {
+                Destroy(Player.gameObject);
+            }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
         {
             Destroy(collision.gameObject);
-            marshmallowPoints++;
-            Debug.Log(marshmallowPoints);
+            MarshmallowPoints++;
         }
         if (collision.gameObject.tag == "Bubble")
         {
             PauseGame();
-            inputField.SetActive(true);
-            submitThoughtButton.SetActive(true);
-            Button submitThoughtbtn = submitThoughtButton.GetComponent<Button>();
-            submitThoughtbtn.onClick.AddListener(DecenteringButton); 
+            InputField.SetActive(true);
+            SubmitThoughtButtonObject.SetActive(true);
+            Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
+            SubmitThoughtButton.onClick.AddListener(DecenteringButton); 
 
         }
     }
 
     void DecenteringButton()
     {
-        inputField.SetActive(false);
-        submitThoughtButton.SetActive(false);
+        InputField.SetActive(false);
+        SubmitThoughtButtonObject.SetActive(false);
         ResumeGame();
     }
     void PauseGame()

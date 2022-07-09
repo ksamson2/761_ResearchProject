@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText;
+    public Text ScoreText;
+    public Text TeaLeavesTotal;
     public float score;
 
     // Update is called once per frame
@@ -14,7 +15,10 @@ public class ScoreManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Player") != null) 
         {
             score += 1 * Time.deltaTime; 
-            scoreText.text = ((int)score).ToString();
+            ScoreText.text = ((int)score).ToString();
         }
+
+        var TeaLeaves = PlayerCollision.MarshmallowPoints;
+        TeaLeavesTotal.text = ((int)TeaLeaves).ToString();
     }
 }
