@@ -15,5 +15,9 @@ public class DestroyObjects : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Bubble")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

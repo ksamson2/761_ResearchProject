@@ -20,7 +20,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle") 
         {
-            Destroy(player.gameObject);
+            // Destroy(player.gameObject);
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
         {
