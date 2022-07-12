@@ -20,6 +20,7 @@ public class SpawnObstacles : MonoBehaviour
         public float MinimumY;
         public float MaximumY;
     }
+
     [System.Serializable]
     public class BubbleObject
     {

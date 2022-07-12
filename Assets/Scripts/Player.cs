@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private Vector2 playerDirection;
     public float jumpValue = 25;
     public int MaxJumpCount = 2;
-
+    public Animator Animator;
 
     private int multiJumpCount;
 
