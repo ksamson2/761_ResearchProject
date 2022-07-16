@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
+            Animator.SetBool("IsJumping", true);
             multiJumpCount++;
             if (multiJumpCount <= MaxJumpCount)
             {
