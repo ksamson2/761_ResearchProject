@@ -41,15 +41,22 @@ public class PlayerCollision : MonoBehaviour
             InputField.SetActive(true);
             SubmitThoughtButtonObject.SetActive(true);
             Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
-            SubmitThoughtButton.onClick.AddListener(DecenteringButton); 
+            var Bubble = gameObject.GetComponent<Sprite>();
+            SubmitThoughtButton.onClick.AddListener(DecenteringButton);
 
         }
     }
 
     void DecenteringButton()
     {
+
         InputField.SetActive(false);
+        // var InputFieldText = InputField.GetComponent<InputField>();
+        // InputFieldText.text = "";
+
         SubmitThoughtButtonObject.SetActive(false);
+        var Bubble = GameObject.FindGameObjectWithTag("Bubble");
+        Bubble.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
         ResumeGame();
     }
     void PauseGame()
