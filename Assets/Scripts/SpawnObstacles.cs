@@ -70,14 +70,14 @@ public class SpawnObstacles : MonoBehaviour
             spawnRate = Time.time + timeBetweenSpawn;
         }
 
-        if (Time.time > Bubble.SpawnRate)
-        {
+        //if (Time.time > Bubble.SpawnRate)
+        //{
 
-            var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
-            var BubbleX = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
-            Instantiate(Bubble.GameObject, transform.position + new Vector3(BubbleX, BubbleY, 0), transform.rotation);
-            Bubble.SpawnRate = Time.time + Bubble.TimeBetweenSpawn;
-        }
+        //    var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
+        //    var BubbleX = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
+        //    Instantiate(Bubble.GameObject, transform.position + new Vector3(BubbleX, BubbleY, 0), transform.rotation);
+        //    Bubble.SpawnRate = Time.time + Bubble.TimeBetweenSpawn;
+        //}
 
         if (Time.time > BreathingCloudsSpawnRate)
         {
