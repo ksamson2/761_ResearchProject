@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
     public float jumpValue = 25;
+    public Vector2 velocity;
     public int MaxJumpCount = 2;
     public Animator Animator;
     private int multiJumpCount;
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Animator.SetFloat("Velocity", velocity.y);
+        velocity = rb.velocity;
+        Debug.Log(velocity.y);
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             Animator.SetTrigger("IsJumping");
@@ -27,19 +31,30 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            rb.transform.localScale = new Vector3(0.3f, 0.2f, 1);
+            rb.transform.localScale = new Vector3(0.2f, 0.2f, 1);
         }
         else
         {
             rb.transform.localScale = new Vector3(0.3f, 0.3f, 1);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Cloud")
+    //    {
+    //        Debug.Log("Collision");
+    //        multiJumpCount = 0;
+    //        Animator.ResetTrigger("IsJumping");
+    //    }
+
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Ground" || collision.gameObject.tag == "Cloud")
+        if (collision.gameObject.tag == "Ground")
         {
             multiJumpCount = 0;
+            Animator.ResetTrigger("IsJumping");
         }
-        Animator.ResetTrigger("IsJumping");
     }
 }

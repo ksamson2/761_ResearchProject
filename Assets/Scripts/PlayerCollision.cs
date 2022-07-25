@@ -53,10 +53,8 @@ public class PlayerCollision : MonoBehaviour
         InputField.SetActive(false);
         // var InputFieldText = InputField.GetComponent<InputField>();
         // InputFieldText.text = "";
-
         SubmitThoughtButtonObject.SetActive(false);
-        var Bubble = GameObject.FindGameObjectWithTag("Bubble");
-        Bubble.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+        GameObject.FindGameObjectWithTag("Bubble").GetComponent<Bubble>().FloatAway = true;
         ResumeGame();
     }
     void PauseGame()
