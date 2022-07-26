@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject MainMenuPanel;
     public GameObject PlayButtonObject;
-    public GameObject PauseButtonObject;
     public GameObject QuitButtonObject;
 
     // Start is called before the first frame update
@@ -20,11 +20,12 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("capture key");
+            MainMenuPanel.SetActive(true);
+            PauseGame();
             Button PlayButton = PlayButtonObject.GetComponent<Button>();
-            Button PauseButton = PauseButtonObject.GetComponent<Button>();
             Button QuitButton = QuitButtonObject.GetComponent<Button>();
             PlayButton.onClick.AddListener(ResumeGame);
-            PauseButton.onClick.AddListener(PauseGame);
             QuitButton.onClick.AddListener(ExitGame);
 
         }
