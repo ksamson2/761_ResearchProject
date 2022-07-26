@@ -41,7 +41,6 @@ public class PlayerCollision : MonoBehaviour
             InputField.SetActive(true);
             SubmitThoughtButtonObject.SetActive(true);
             Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
-            var Bubble = gameObject.GetComponent<Sprite>();
             SubmitThoughtButton.onClick.AddListener(DecenteringButton);
 
         }

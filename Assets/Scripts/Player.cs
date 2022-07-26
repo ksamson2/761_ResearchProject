@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     {
         Animator.SetFloat("Velocity", velocity.y);
         velocity = rb.velocity;
-        Debug.Log(velocity.y);
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             Animator.SetTrigger("IsJumping");
@@ -51,7 +50,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.name == "Cloud")
         {
             multiJumpCount = 0;
             Animator.ResetTrigger("IsJumping");

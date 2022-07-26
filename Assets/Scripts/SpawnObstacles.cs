@@ -24,7 +24,6 @@ public class SpawnObstacles : MonoBehaviour
     [System.Serializable]
     public class BubbleObject
     {
-        public GameObject GameObject;
         public float MaximumY;
         public float MinimumY;
         public float MaximumX;
@@ -73,17 +72,17 @@ public class SpawnObstacles : MonoBehaviour
         if (Time.time > Bubble.SpawnRate)
         {
 
-            //var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
-            //var BubbleX = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
-            //Instantiate(Bubble.GameObject, transform.position + new Vector3(BubbleX, BubbleY, 0), transform.rotation);
-            //Bubble.SpawnRate = Time.time + Bubble.TimeBetweenSpawn;
+            var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
+            var BubbleX = Random.Range(Bubble.MinimumX, Bubble.MaximumX);
+            ObjectPooler.Instance.SpawnFromPool("Bubble", BubbleX, BubbleY);
+            Bubble.SpawnRate = Time.time + Bubble.TimeBetweenSpawn;
         }
 
         if (Time.time > BreathingCloudsSpawnRate)
         {
-            //ShouldSpawnObstacles = false;
-            //SpawnBreathingClouds();
-            //BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds; 
+            ShouldSpawnObstacles = false;
+            SpawnBreathingClouds();
+            BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
         } else
         {
             ShouldSpawnObstacles = true; 
