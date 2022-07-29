@@ -9,6 +9,11 @@ public class PlayerCollision : MonoBehaviour
     private GameObject Player;
     public GameObject InputField;
     public GameObject SubmitThoughtButtonObject;
+    private GameObject bubble;
+    [SerializeField]
+    private AudioSource BubbleSound;
+    [SerializeField]
+    private AudioSource TeaLeaveSound;
 
     void Start()
     {
@@ -32,14 +37,17 @@ public class PlayerCollision : MonoBehaviour
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
         {
+            TeaLeaveSound.Play();
             Destroy(collision.gameObject);
             MarshmallowPoints++;
         }
         if (collision.gameObject.tag == "Bubble")
         {
+            BubbleSound.Play();
             PauseGame();
             InputField.SetActive(true);
             SubmitThoughtButtonObject.SetActive(true);
+            bubble = collision.gameObject;
             Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
             SubmitThoughtButton.onClick.AddListener(DecenteringButton);
 
@@ -53,7 +61,7 @@ public class PlayerCollision : MonoBehaviour
         // var InputFieldText = InputField.GetComponent<InputField>();
         // InputFieldText.text = "";
         SubmitThoughtButtonObject.SetActive(false);
-        GameObject.FindGameObjectWithTag("Bubble").GetComponent<Bubble>().FloatAway = true;
+        bubble.GetComponent<Bubble>().FloatAway = true;
         ResumeGame();
     }
     void PauseGame()

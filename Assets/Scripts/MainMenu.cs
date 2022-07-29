@@ -9,18 +9,11 @@ public class MainMenu : MonoBehaviour
     public GameObject PlayButtonObject;
     public GameObject QuitButtonObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("capture key");
             MainMenuPanel.SetActive(true);
             PauseGame();
             Button PlayButton = PlayButtonObject.GetComponent<Button>();

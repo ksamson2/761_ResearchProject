@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     public Vector2 velocity;
     public int MaxJumpCount = 2;
     public Animator Animator;
-    private int multiJumpCount;
+    private int multiJumpCount = 0;
+    [SerializeField]
+    private AudioSource JumpSound;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
         velocity = rb.velocity;
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
+            JumpSound.Play();
             Animator.SetTrigger("IsJumping");
             multiJumpCount++;
             if (multiJumpCount <= MaxJumpCount)
@@ -37,20 +40,19 @@ public class Player : MonoBehaviour
             rb.transform.localScale = new Vector3(0.3f, 0.3f, 1);
         }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Cloud")
-    //    {
-    //        Debug.Log("Collision");
-    //        multiJumpCount = 0;
-    //        Animator.ResetTrigger("IsJumping");
-    //    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Cloud")
+        {
+            multiJumpCount = 1;
+            Animator.ResetTrigger("IsJumping");
+        }
 
-    //}
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.name == "Cloud")
+        if (collision.gameObject.tag == "Ground")
         {
             multiJumpCount = 0;
             Animator.ResetTrigger("IsJumping");

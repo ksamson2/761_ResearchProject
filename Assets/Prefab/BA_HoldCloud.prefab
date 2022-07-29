@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4066267708419463528}
   m_Layer: 0
   m_Name: BA_HoldCloud
-  m_TagString: Untagged
+  m_TagString: Cloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 4b89b4a06230d6542973c80318126a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 844414dcec791154081ec21efea0cfaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,16 +120,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.8883996, y: 1.982475}
+  m_Offset: {x: 0.10386658, y: -0.32230282}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 57.516766, y: 31.96}
+    oldSize: {x: 19.2, y: 10.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.673973, y: 7.0689225}
+  m_Size: {x: 15.163216, y: 4.211398}
   m_EdgeRadius: 0
