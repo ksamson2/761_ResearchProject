@@ -7,52 +7,53 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject[] TutorialPopUps;
-    private int PopUpIndex;
+    private int PopUpIndex = 0;
     public float WaitTime = 2f;
     public GameObject StartSpawnObstacles;
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < TutorialPopUps.Length; i++)
-        {
-            if(i == PopUpIndex)
-            {
-                TutorialPopUps[PopUpIndex].SetActive(true);
-            }
-            else
-            {
-                TutorialPopUps[PopUpIndex].SetActive(false);
-            }
-        }
 
         if(PopUpIndex == 0)
         {
-            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
+            TutorialPopUps[PopUpIndex].SetActive(true);
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
+                TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
             }
         }
         else if (PopUpIndex == 1)
         {
-            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
+            TutorialPopUps[PopUpIndex].SetActive(true);
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
+                TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
             }
         }
         //else if (PopUpIndex == 2)
         //{
-        //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        //    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.KeypadEnter))
         //    {
-        //        PopUpIndex++;
+        //        
         //    }
         //}
         else if (PopUpIndex == 2)
         {
-            if(WaitTime < 0 )
+            TutorialPopUps[PopUpIndex].SetActive(true);
+            //if (WaitTime < 0 )
+            //{
+            //    StartSpawnObstacles.SetActive(true);
+            //} else
+            //{
+            //    WaitTime -= Time.deltaTime; 
+            //}
+            if ( Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
-                StartSpawnObstacles.SetActive(true);
-            } else
-            {
-                WaitTime -= Time.deltaTime; 
+                Debug.Log("key enter");
+                Debug.Log(PopUpIndex);
+                TutorialPopUps[PopUpIndex].SetActive(false);
+                PopUpIndex++;
             }
         }
     }
