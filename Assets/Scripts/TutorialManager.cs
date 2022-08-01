@@ -31,13 +31,6 @@ public class TutorialManager : MonoBehaviour
                 PopUpIndex++;
             }
         }
-        //else if (PopUpIndex == 2)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        //    {
-        //        
-        //    }
-        //}
         else if (PopUpIndex == 2)
         {
             TutorialPopUps[PopUpIndex].SetActive(true);
@@ -48,10 +41,17 @@ public class TutorialManager : MonoBehaviour
             //{
             //    WaitTime -= Time.deltaTime; 
             //}
-            if ( Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+            if ( Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.W))
             {
-                Debug.Log("key enter");
-                Debug.Log(PopUpIndex);
+                TutorialPopUps[PopUpIndex].SetActive(false);
+                PopUpIndex++;
+            }
+        }
+        else if (PopUpIndex == 3)
+        {
+            TutorialPopUps[PopUpIndex].SetActive(true);
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
                 TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
             }

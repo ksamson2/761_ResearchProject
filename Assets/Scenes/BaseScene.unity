@@ -508,7 +508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112945958
 GameObject:
@@ -790,11 +790,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &156802254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2617762561991985477, guid: 780f53d5d45628d439307246444f049c, type: 3}
-  m_PrefabInstance: {fileID: 1942895708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &156802258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7363402343983591989, guid: 780f53d5d45628d439307246444f049c, type: 3}
@@ -1073,63 +1068,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &243182569
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2058487538076751956, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_Name
-      value: Bubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119992656539855993, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ccc4cbf61fe0e6742a22e3885064762e, type: 3}
 --- !u!1 &280433821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,11 +3110,6 @@ MonoBehaviour:
   BackgroundRenderer: {fileID: 0}
   Cam: {fileID: 519420028}
   ParallaxEffect: 0.7
---- !u!1 &886471788 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
-  m_PrefabInstance: {fileID: 645217471}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &886471789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901455041997316949, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
@@ -3398,11 +3331,6 @@ Transform:
   m_Father: {fileID: 2031933652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1027957465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6336393680154833632, guid: 2c98321d06d2d1045aaa93516577d66b, type: 3}
-  m_PrefabInstance: {fileID: 874262820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1027957466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1680336838082781133, guid: 2c98321d06d2d1045aaa93516577d66b, type: 3}
@@ -4427,9 +4355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TutorialPopUps:
-  - {fileID: 886471788}
-  - {fileID: 1027957465}
-  - {fileID: 156802254}
+  - {fileID: 4433451444571258411, guid: 8d38008050d37bf41be568412a1829b3, type: 3}
+  - {fileID: 5580983637207607248, guid: 5460d4e3e0e373a4e8c53c1a57b60a51, type: 3}
+  - {fileID: 7398900094898590172, guid: dcf802f22c2ec574c9c1519ba05c2e3b, type: 3}
+  - {fileID: 6685723296168092622, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
   WaitTime: 2
   StartSpawnObstacles: {fileID: 1888781986}
 --- !u!1 &1562888049

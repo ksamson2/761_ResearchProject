@@ -41,19 +41,23 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
             MarshmallowPoints++;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Bubble")
         {
-            BubbleSound.Play();
-            PauseGame();
-            InputField.SetActive(true);
-            SubmitThoughtButtonObject.SetActive(true);
             bubble = collision.gameObject;
-            Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
-            SubmitThoughtButton.onClick.AddListener(DecenteringButton);
-
+            if (bubble.GetComponent<Bubble>().FloatAway == false)
+            {
+                BubbleSound.Play();
+                PauseGame();
+                InputField.SetActive(true);
+                SubmitThoughtButtonObject.SetActive(true);
+                Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
+                SubmitThoughtButton.onClick.AddListener(DecenteringButton);
+            }
         }
     }
-
     void DecenteringButton()
     {
 
