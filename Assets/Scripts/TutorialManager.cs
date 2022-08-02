@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public GameObject[] TutorialPopUps;
     private int PopUpIndex = 0;
@@ -14,7 +13,6 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(PopUpIndex == 0)
         {
             TutorialPopUps[PopUpIndex].SetActive(true);
