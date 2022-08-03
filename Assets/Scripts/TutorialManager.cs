@@ -13,14 +13,14 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    PopUpIndex += 5;
-        //    for(int i =0; i < TutorialPopUps.Length; i++)
-        //    {
-        //        TutorialPopUps[i].SetActive(false);
-        //    }
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PopUpIndex += 5;
+            for (int i = 0; i < TutorialPopUps.Length; i++)
+            {
+                TutorialPopUps[i].SetActive(false);
+            }
+        }
         Debug.Log(PopUpIndex);
 
         if (PopUpIndex == 0)

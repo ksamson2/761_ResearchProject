@@ -4919,18 +4919,18 @@ MonoBehaviour:
     MarshmallowCount: 4
   ObstacleObjects:
   - GameObject: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
-    MinimumY: -3.7
-    MaximumY: -3.7
+    MinimumY: -4.1
+    MaximumY: -4
   - GameObject: {fileID: 5619761701620006897, guid: eef7abd2306227049a25dc696a2f678c, type: 3}
-    MinimumY: -2
-    MaximumY: -2
+    MinimumY: -2.5
+    MaximumY: -2.5
   Marshmallow: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
   Bubble:
     MaximumY: -1
     MinimumY: -3
     MaximumX: 10
     MinimumX: 7
-    TimeBetweenSpawn: 20
+    TimeBetweenSpawn: 15
     SpawnRate: 0
   xSpawnRange: 6
   minXSpawnRange: 2
@@ -4948,7 +4948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888781986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.9, y: 0, z: 0}
+  m_LocalPosition: {x: 32.45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
