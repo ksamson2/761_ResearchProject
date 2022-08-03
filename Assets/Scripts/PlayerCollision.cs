@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
+    private float LIFE_POINTS_AMOUNT = 12;
     public static float MarshmallowPoints;
     private GameObject Player;
     public GameObject InputField;
@@ -26,14 +27,14 @@ public class PlayerCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle") 
         {
-            if (MarshmallowPoints >= 12 )
+            if (MarshmallowPoints >= LIFE_POINTS_AMOUNT)
             {
-                MarshmallowPoints -= 12;
+                MarshmallowPoints -= LIFE_POINTS_AMOUNT;
             }
             else
             {
-                Player.gameObject.GetComponent<Animator>().enabled = false;
-                Destroy(Player.gameObject);
+            //    Player.gameObject.GetComponent<Animator>().enabled = false;
+            //    Destroy(Player.gameObject);
             }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")

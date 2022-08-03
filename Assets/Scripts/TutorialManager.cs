@@ -13,7 +13,17 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PopUpIndex == 0)
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    PopUpIndex += 5;
+        //    for(int i =0; i < TutorialPopUps.Length; i++)
+        //    {
+        //        TutorialPopUps[i].SetActive(false);
+        //    }
+        //}
+        Debug.Log(PopUpIndex);
+
+        if (PopUpIndex == 0)
         {
             TutorialPopUps[PopUpIndex].SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
@@ -24,7 +34,7 @@ public class TutorialManager : MonoBehaviour
         else if (PopUpIndex == 1)
         {
             TutorialPopUps[PopUpIndex].SetActive(true);
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
                 TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
             }
@@ -39,7 +49,7 @@ public class TutorialManager : MonoBehaviour
             //{
             //    WaitTime -= Time.deltaTime; 
             //}
-            if ( Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.W))
+            if ( Input.GetKeyDown(KeyCode.Return))
             {
                 TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
@@ -48,7 +58,7 @@ public class TutorialManager : MonoBehaviour
         else if (PopUpIndex == 3)
         {
             TutorialPopUps[PopUpIndex].SetActive(true);
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Return))
             {
                 TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
