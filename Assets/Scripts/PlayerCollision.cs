@@ -7,6 +7,8 @@ public class PlayerCollision : MonoBehaviour
 {
     private float LIFE_POINTS_AMOUNT = 12;
     public static float MarshmallowPoints;
+    public static float TotalTeaLeaves = 0;
+    public static float BubbleTotal;
     private GameObject Player;
     public GameObject InputField;
     public GameObject SubmitThoughtButtonObject;
@@ -33,8 +35,8 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-            //    Player.gameObject.GetComponent<Animator>().enabled = false;
-            //    Destroy(Player.gameObject);
+                //Player.gameObject.GetComponent<Animator>().enabled = false;
+                //Destroy(Player.gameObject);
             }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
@@ -42,12 +44,14 @@ public class PlayerCollision : MonoBehaviour
             TeaLeaveSound.Play();
             Destroy(collision.gameObject);
             MarshmallowPoints++;
+            TotalTeaLeaves++;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bubble")
         {
+            BubbleTotal++;
             bubble = collision.gameObject;
             if (bubble.GetComponent<Bubble>().FloatAway == false)
             {
@@ -64,9 +68,11 @@ public class PlayerCollision : MonoBehaviour
     {
 
         InputField.SetActive(false);
+
         // var InputFieldText = InputField.GetComponent<InputField>();
-        // InputFieldText.text = "";
+       
         SubmitThoughtButtonObject.SetActive(false);
+        bubble.GetComponent<Renderer>().material.color = Color.black;
         bubble.GetComponent<Bubble>().FloatAway = true;
         ResumeGame();
     }

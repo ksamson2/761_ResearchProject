@@ -21,7 +21,6 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopUps[i].SetActive(false);
             }
         }
-        Debug.Log(PopUpIndex);
 
         if (PopUpIndex == 0)
         {
