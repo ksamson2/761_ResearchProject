@@ -48,7 +48,9 @@ public class SpawnObstacles : MonoBehaviour
     public float SpacingBetweenMarshmallows = 1.6f;
     public float SpacingBetweenClouds = 1.5f;
     public ScoreManager ScoreManager;
-    public bool ShouldSpawnObstacles = true; 
+    public bool ShouldSpawnObstacles = true;
+
+    public float IncreaseCloudSize = 0.01f;
     private void Start()
     {
         ScoreManager = FindObjectOfType<ScoreManager>();
@@ -83,7 +85,9 @@ public class SpawnObstacles : MonoBehaviour
             ShouldSpawnObstacles = false;
             SpawnBreathingClouds();
             BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
-        } else
+            IncreaseCloudSize += 0.01f;
+        }
+        else
         {
             ShouldSpawnObstacles = true; 
         }
@@ -104,9 +108,11 @@ public class SpawnObstacles : MonoBehaviour
         for (var i = 0; i < BreathingClouds.Count; i++)
         {
             var mindfulnessObj = BreathingClouds[i];
-            var cloudSpawnX = xposition + i * SpacingBetweenClouds;
+            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100 + 1);
             var cloudSpawnY = Random.Range(mindfulnessObj.MinimumY, mindfulnessObj.MaximumY);
-            Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
+            GameObject Cloud = Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
+            var CurrentCloudScale = Cloud.transform.localScale;
+            Cloud.transform.localScale = new Vector3(CurrentCloudScale.x + IncreaseCloudSize, CurrentCloudScale.y + IncreaseCloudSize, CurrentCloudScale.z);
             for (int marshmallowIndex = 0; marshmallowIndex < mindfulnessObj.MarshmallowCount; marshmallowIndex++)
             {
                 var marshmallowX = cloudSpawnX + (marshmallowIndex * SpacingBetweenMarshmallows) - 2;

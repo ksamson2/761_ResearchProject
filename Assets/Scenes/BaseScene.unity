@@ -5538,11 +5538,12 @@ MonoBehaviour:
   xSpawnRange: 6
   minXSpawnRange: 2
   timeBetweenSpawn: 3
-  TimeBetweenBreathingClouds: 60
+  TimeBetweenBreathingClouds: 10
   SpacingBetweenMarshmallows: 1.6
   SpacingBetweenClouds: 6
   ScoreManager: {fileID: 0}
   ShouldSpawnObstacles: 1
+  IncreaseCloudSize: 0.1
 --- !u!4 &1888781988
 Transform:
   m_ObjectHideFlags: 0
