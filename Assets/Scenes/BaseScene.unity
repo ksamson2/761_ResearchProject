@@ -686,6 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSpeed: 2
   increaseSpeed: 0
+  Pause: 0
 --- !u!114 &207210561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,6 +1223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1498454380}
     m_Modifications:
+    - target: {fileID: 786133629246772126, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d71a446343105c84b87d378541fee056, type: 3}
     - target: {fileID: 4714672071749183539, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2103,7 +2108,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -4336,7 +4341,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4b18b4852a8a9a4458b186092d857c33, type: 3}
     - target: {fileID: 4238895277485413827, guid: 5460d4e3e0e373a4e8c53c1a57b60a51, type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5460d4e3e0e373a4e8c53c1a57b60a51, type: 3}
@@ -5330,7 +5335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433451444571258411, guid: 8d38008050d37bf41be568412a1829b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6910871722889843189, guid: 8d38008050d37bf41be568412a1829b3, type: 3}
       propertyPath: m_RootOrder
@@ -5346,7 +5351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910871722889843189, guid: 8d38008050d37bf41be568412a1829b3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6910871722889843189, guid: 8d38008050d37bf41be568412a1829b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5507,6 +5512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae89a3d83cbe51846aa69dce84c87d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstaclesUnlockedTotal: 0
+  ObstaclesToUnlockMax: 0
   BreathingClouds:
   - GameObject: {fileID: 981014153195731871, guid: 4500c0af00af9014397951fd1a777ff6, type: 3}
     MinimumY: 1
@@ -5538,7 +5545,7 @@ MonoBehaviour:
   xSpawnRange: 6
   minXSpawnRange: 2
   timeBetweenSpawn: 3
-  TimeBetweenBreathingClouds: 10
+  TimeBetweenBreathingClouds: 15
   SpacingBetweenMarshmallows: 1.6
   SpacingBetweenClouds: 6
   ScoreManager: {fileID: 0}
@@ -5757,6 +5764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputField: {fileID: 300005672}
   SubmitThoughtButtonObject: {fileID: 1992638176}
+  UserInput: {fileID: 300005674}
   BubbleSound: {fileID: 1981544542}
   TeaLeaveSound: {fileID: 1981544543}
 --- !u!50 &1981544541
@@ -6997,11 +7005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0712
+      value: 8.46
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1701
+      value: -2.56
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalPosition.z

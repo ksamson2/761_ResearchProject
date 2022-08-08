@@ -6,9 +6,17 @@ public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed;
     public float increaseSpeed;
+    public bool Pause = false;
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0); 
+        if (Pause)
+        {
+            return;
+        }
+        else
+        {
+            transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
+        }
     }
 }

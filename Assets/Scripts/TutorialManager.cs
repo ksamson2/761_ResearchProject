@@ -24,6 +24,7 @@ public class TutorialManager : MonoBehaviour
 
         if (PopUpIndex == 0)
         {
+           
             TutorialPopUps[PopUpIndex].SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
                 TutorialPopUps[PopUpIndex].SetActive(false);

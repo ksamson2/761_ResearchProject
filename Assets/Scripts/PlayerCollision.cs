@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerCollision : MonoBehaviour
 {
-    private float LIFE_POINTS_AMOUNT = 12;
+ 
     public static float MarshmallowPoints;
     public static float TotalTeaLeaves = 0;
     public static float BubbleTotal;
     private GameObject Player;
     public GameObject InputField;
     public GameObject SubmitThoughtButtonObject;
+    public TMP_InputField UserInput;
+
     private GameObject bubble;
     [SerializeField]
     private AudioSource BubbleSound;
     [SerializeField]
     private AudioSource TeaLeaveSound;
-
+    private float LIFE_POINTS_AMOUNT = 12;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -68,9 +71,7 @@ public class PlayerCollision : MonoBehaviour
     {
 
         InputField.SetActive(false);
-
-        // var InputFieldText = InputField.GetComponent<InputField>();
-       
+        UserInput.GetComponentInChildren<TMP_InputField>().text = "";
         SubmitThoughtButtonObject.SetActive(false);
         bubble.GetComponent<Renderer>().material.color = Color.black;
         bubble.GetComponent<Bubble>().FloatAway = true;

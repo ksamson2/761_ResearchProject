@@ -5,15 +5,6 @@ using UnityEngine;
 public class SpawnObstacles : MonoBehaviour
 {
     [System.Serializable]
-    public class BreathingExerciseClouds
-    {
-        public GameObject GameObject;
-        public float MinimumY;
-        public float MaximumY;
-        public int MarshmallowCount;
-    }
-
-    [System.Serializable]
     public class Obstacles
     {
         public GameObject GameObject;
@@ -31,6 +22,9 @@ public class SpawnObstacles : MonoBehaviour
         public float TimeBetweenSpawn;
         public float SpawnRate;
     }
+
+    [SerializeField] private int ObstaclesUnlockedTotal;
+    [SerializeField] private int ObstaclesToUnlockMax;
 
     public List<BreathingExerciseClouds> BreathingClouds;
     public List<Obstacles> ObstacleObjects;
@@ -95,20 +89,27 @@ public class SpawnObstacles : MonoBehaviour
 
     void SpawnRockObstacles(float RandomX)
     {
-        int RandomIndex = Random.Range(0, ObstacleObjects.Count);
+        int RandomIndex = Random.Range(0, 2 + ObstaclesUnlockedTotal);
         var ObstacleToSpawn = ObstacleObjects[RandomIndex];
         var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn. MaximumY);
         Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
     }
+    void AddObstacle ()
+    {
+        if (ObstaclesUnlockedTotal < ObstaclesToUnlockMax)
+            ObstaclesUnlockedTotal++;
+    }
 
     void SpawnBreathingClouds()
     {
+        SpacingBetweenClouds += 0.1f;
+
         float xposition = 2;
 
         for (var i = 0; i < BreathingClouds.Count; i++)
         {
             var mindfulnessObj = BreathingClouds[i];
-            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100 + 1);
+            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100 );
             var cloudSpawnY = Random.Range(mindfulnessObj.MinimumY, mindfulnessObj.MaximumY);
             GameObject Cloud = Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
             var CurrentCloudScale = Cloud.transform.localScale;
