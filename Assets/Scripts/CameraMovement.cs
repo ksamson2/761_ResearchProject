@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed;
     public float increaseSpeed;
-    public bool Pause = false;
+    public  static bool Pause = false;
     // Update is called once per frame
     void Update()
     {

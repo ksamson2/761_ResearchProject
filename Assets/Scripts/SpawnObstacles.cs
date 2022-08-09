@@ -35,6 +35,7 @@ public class SpawnObstacles : MonoBehaviour
     public float minXSpawnRange;
 
     public float timeBetweenSpawn;
+    public float TimeBetweenSpawnEndRate;
     private float spawnRate;
 
     public float TimeBetweenBreathingClouds;
@@ -42,7 +43,7 @@ public class SpawnObstacles : MonoBehaviour
     public float SpacingBetweenMarshmallows = 1.6f;
     public float SpacingBetweenClouds = 1.5f;
     public ScoreManager ScoreManager;
-    public bool ShouldSpawnObstacles = true;
+    public static bool ShouldSpawnObstacles = false;
 
     public float IncreaseCloudSize = 0.01f;
     private void Start()
@@ -52,7 +53,11 @@ public class SpawnObstacles : MonoBehaviour
 
     void Update()
     {
-        Spawn();
+        if(ShouldSpawnObstacles)
+        {
+            Spawn();
+        }
+        
     }
 
     void Spawn()
@@ -62,7 +67,7 @@ public class SpawnObstacles : MonoBehaviour
         if (Time.time > spawnRate && ShouldSpawnObstacles)
         {
             SpawnRockObstacles(RandomX);
-            spawnRate = Time.time + timeBetweenSpawn;
+            spawnRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
         }
 
         if (Time.time > Bubble.SpawnRate)
@@ -76,14 +81,9 @@ public class SpawnObstacles : MonoBehaviour
 
         if (Time.time > BreathingCloudsSpawnRate)
         {
-            ShouldSpawnObstacles = false;
             SpawnBreathingClouds();
             BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
             IncreaseCloudSize += 0.01f;
-        }
-        else
-        {
-            ShouldSpawnObstacles = true; 
         }
     }
 

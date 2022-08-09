@@ -12,6 +12,7 @@ TagManager:
   - Text
   - MainMenu
   - Ground
+  - Tutorial
   layers:
   - Default
   - TransparentFX

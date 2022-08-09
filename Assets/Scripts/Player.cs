@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private int multiJumpCount = 0;
     [SerializeField]
     private AudioSource JumpSound;
+    [SerializeField]
+    private AudioSource RunOnCloudSound;
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cloud")
         {
+            RunOnCloudSound.Play();
             multiJumpCount = 1;
             Animator.ResetTrigger("IsJumping");
         }

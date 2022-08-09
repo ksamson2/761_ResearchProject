@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class LoopingBackground : MonoBehaviour
 {
-    public float Length, StartPosition;
-    public float BackgroundSpeed;
-    public Renderer BackgroundRenderer;
+    private float Length, StartPosition;
     public GameObject Cam;
     public float ParallaxEffect;
     // Update is called once per frame

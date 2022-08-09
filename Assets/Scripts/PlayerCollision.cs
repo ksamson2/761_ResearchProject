@@ -40,6 +40,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 //Player.gameObject.GetComponent<Animator>().enabled = false;
                 //Destroy(Player.gameObject);
+                //PauseGame();
             }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
