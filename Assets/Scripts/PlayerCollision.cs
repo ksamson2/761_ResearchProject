@@ -20,7 +20,7 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource BubbleSound;
     [SerializeField]
     private AudioSource TeaLeaveSound;
-    private float LIFE_POINTS_AMOUNT = 12;
+    public static float LIFE_POINTS_AMOUNT = 12;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -46,7 +46,10 @@ public class PlayerCollision : MonoBehaviour
         {
             TeaLeaveSound.Play();
             Destroy(collision.gameObject);
-            MarshmallowPoints++;
+            if(MarshmallowPoints < LIFE_POINTS_AMOUNT)
+            {
+                MarshmallowPoints++;
+            }
             TotalTeaLeaves++;
         }
     }
