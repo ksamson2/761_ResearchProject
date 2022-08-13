@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text ScoreText;
+    public Text ScoreTextInGame;
     public Text TeaLeavesTotal;
     public Text BubbleTotal;
     public Text TotalScore;
@@ -18,12 +19,14 @@ public class ScoreManager : MonoBehaviour
         {
             score += 1 * Time.deltaTime; 
             ScoreText.text = ((int)score).ToString();
+            Debug.Log(score);
+            ScoreTextInGame.text = ((int)score).ToString();
             float BubbleTotal = PlayerCollision.BubbleTotal;
+            Debug.Log(BubbleTotal);
             float TotalTeaLeaves = PlayerCollision.TotalTeaLeaves;
-            TotalScore.text = ((int)score + TotalTeaLeaves + BubbleTotal).ToString(); 
+            TotalScore.text = ((int)score + TotalTeaLeaves + BubbleTotal).ToString();
+            var TeaLeaves = PlayerCollision.MarshmallowPoints;
+            TeaLeavesTotal.text = ((int)TeaLeaves).ToString();
         }
-
-        var TeaLeaves = PlayerCollision.MarshmallowPoints;
-        TeaLeavesTotal.text = ((int)TeaLeaves).ToString();
     }
 }

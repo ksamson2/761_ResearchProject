@@ -38,9 +38,8 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                //Player.gameObject.GetComponent<Animator>().enabled = false;
-                //Destroy(Player.gameObject);
-                //PauseGame();
+                Player.gameObject.GetComponent<Animator>().enabled = false;
+                Destroy(Player.gameObject);
             }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
@@ -52,6 +51,7 @@ public class PlayerCollision : MonoBehaviour
                 MarshmallowPoints++;
             }
             TotalTeaLeaves++;
+            Debug.Log(TotalTeaLeaves);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
