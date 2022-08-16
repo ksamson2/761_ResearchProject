@@ -51,7 +51,6 @@ public class PlayerCollision : MonoBehaviour
                 MarshmallowPoints++;
             }
             TotalTeaLeaves++;
-            Debug.Log(TotalTeaLeaves);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

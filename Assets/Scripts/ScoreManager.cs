@@ -19,14 +19,16 @@ public class ScoreManager : MonoBehaviour
         {
             score += 1 * Time.deltaTime; 
             ScoreText.text = ((int)score).ToString();
-            Debug.Log(score);
             ScoreTextInGame.text = ((int)score).ToString();
-            float BubbleTotal = PlayerCollision.BubbleTotal;
-            Debug.Log(BubbleTotal);
+
+            float BubbleTotalScore = PlayerCollision.BubbleTotal;
+            BubbleTotal.text = BubbleTotalScore.ToString(); 
+
             float TotalTeaLeaves = PlayerCollision.TotalTeaLeaves;
-            TotalScore.text = ((int)score + TotalTeaLeaves + BubbleTotal).ToString();
-            var TeaLeaves = PlayerCollision.MarshmallowPoints;
-            TeaLeavesTotal.text = ((int)TeaLeaves).ToString();
+            TeaLeavesTotal.text = ((int)TotalTeaLeaves).ToString();
+
+            TotalScore.text = ((int)score + TotalTeaLeaves + BubbleTotalScore).ToString();
+            
         }
     }
 }

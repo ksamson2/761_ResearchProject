@@ -7258,7 +7258,7 @@ MonoBehaviour:
     MinimumY: -3
     MaximumX: 10
     MinimumX: 7
-    TimeBetweenSpawn: 25
+    TimeBetweenSpawn: 5
     SpawnRate: 0
   xSpawnRange: 7
   minXSpawnRange: 3
