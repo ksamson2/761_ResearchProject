@@ -3,7 +3,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rb;
-    public float jumpValue = 25;
+    public float jumpValue;
     public Vector2 velocity;
     public int MaxJumpCount = 2;
     public Animator Animator;

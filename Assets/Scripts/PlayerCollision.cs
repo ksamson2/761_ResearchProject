@@ -38,8 +38,8 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                Player.gameObject.GetComponent<Animator>().enabled = false;
-                Destroy(Player.gameObject);
+                //Player.gameObject.GetComponent<Animator>().enabled = false;
+                //Destroy(Player.gameObject);
             }
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
@@ -65,6 +65,7 @@ public class PlayerCollision : MonoBehaviour
                 BubbleSound.Play();
                 PauseGame();
                 InputField.SetActive(true);
+                UserInput.ActivateInputField();
                 SubmitThoughtButtonObject.SetActive(true);
                 Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
                 SubmitThoughtButton.onClick.AddListener(DecenteringButton);

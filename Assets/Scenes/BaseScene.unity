@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852205176794302037, guid: eef7abd2306227049a25dc696a2f678c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.32
+      value: 23.12
       objectReference: {fileID: 0}
     - target: {fileID: 5852205176794302037, guid: eef7abd2306227049a25dc696a2f678c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1596051460337112325, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.18
+      value: 15.11
       objectReference: {fileID: 0}
     - target: {fileID: 1596051460337112325, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2250,7 +2250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370806734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.97, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4675,7 +4675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129553974}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -35.4, y: 0, z: 0}
+  m_LocalPosition: {x: -15.75, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7264,7 +7264,7 @@ MonoBehaviour:
   minXSpawnRange: 3
   timeBetweenSpawn: 4
   TimeBetweenSpawnEndRate: 7
-  TimeBetweenBreathingClouds: 65
+  TimeBetweenBreathingClouds: 15
   SpacingBetweenMarshmallows: 1.6
   SpacingBetweenClouds: 6
   ScoreManager: {fileID: 0}
@@ -8968,15 +8968,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8358
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8358
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8358
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalPosition.x

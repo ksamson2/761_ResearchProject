@@ -7,9 +7,13 @@ public class DestroyObjects : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Cloud")
+        if(collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Cloud" || collision.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);   
+        }
+        if(collision.gameObject.tag == "Tutorial")
+        {
+            Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
         {
