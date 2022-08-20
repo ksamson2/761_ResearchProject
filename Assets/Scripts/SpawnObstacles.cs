@@ -24,7 +24,7 @@ public class SpawnObstacles : MonoBehaviour
     }
 
     public static int ObstaclesUnlockedTotal = 2;
-    public static int ObstaclesToUnlockMax = 2;
+    public static int ObstaclesToUnlockMax = 0;
 
     public List<BreathingExerciseClouds> BreathingClouds;
     public List<Obstacles> ObstacleObjects;
