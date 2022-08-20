@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class UnlockObstacle : MonoBehaviour
 {
-	[SerializeField] private float TimeToIncreaseDifficulty;
-    public ScoreManager ScoreManager;
+	[SerializeField] private int TimeToIncreaseDifficulty;
+    private int CurrentTimeMet;
 
 	private void Update()
     {
-        float CurrentScore = ScoreManager.score;
+        int CurrentScore = (int)ScoreManager.score;
+        if(CurrentScore % TimeToIncreaseDifficulty == 0 & CurrentScore != CurrentTimeMet)
+        {
 
+            CurrentTimeMet = CurrentScore;
+            if (SpawnObstacles.ObstaclesUnlockedTotal < SpawnObstacles.ObstaclesToUnlockMax)
+            {
+                SpawnObstacles.ObstaclesUnlockedTotal++;
+                TimeToIncreaseDifficulty += TimeToIncreaseDifficulty;
+
+            }
+        }
     }
 }

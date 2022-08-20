@@ -73,7 +73,6 @@ public class PlayerCollision : MonoBehaviour
     }
     void DecenteringButton()
     {
-
         InputField.SetActive(false);
         UserInput.GetComponentInChildren<TMP_InputField>().text = "";
         SubmitThoughtButtonObject.SetActive(false);

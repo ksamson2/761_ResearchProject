@@ -23,8 +23,8 @@ public class SpawnObstacles : MonoBehaviour
         public float SpawnRate;
     }
 
-    [SerializeField] private int ObstaclesUnlockedTotal;
-    [SerializeField] private int ObstaclesToUnlockMax;
+    public static int ObstaclesUnlockedTotal = 2;
+    public static int ObstaclesToUnlockMax = 2;
 
     public List<BreathingExerciseClouds> BreathingClouds;
     public List<Obstacles> ObstacleObjects;
@@ -89,12 +89,12 @@ public class SpawnObstacles : MonoBehaviour
 
     void SpawnRockObstacles(float RandomX)
     {
-        int RandomIndex = Random.Range(0, 2 + ObstaclesUnlockedTotal);
+        int RandomIndex = Random.Range(0, ObstaclesUnlockedTotal);
         var ObstacleToSpawn = ObstacleObjects[RandomIndex];
         var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn. MaximumY);
         Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
     }
-    void AddObstacle ()
+    public void AddObstacle ()
     {
         if (ObstaclesUnlockedTotal < ObstaclesToUnlockMax)
             ObstaclesUnlockedTotal++;

@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Text TeaLeavesTotal;
     public Text BubbleTotal;
     public Text TotalScore;
-    public float score;
+    public static float score { get; private set; }
 
     // Update is called once per frame
     void Update()
@@ -18,8 +18,11 @@ public class ScoreManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Player") != null) 
         {
             score += 1 * Time.deltaTime; 
+            string ScoreValue = ((int)score).ToString();
+            int Minutes = (int)score / 60;
+            int Seconds = (int)score % 60;
             ScoreText.text = ((int)score).ToString();
-            ScoreTextInGame.text = ((int)score).ToString();
+            ScoreTextInGame.text = Minutes.ToString() + ":" + Seconds.ToString();
 
             float BubbleTotalScore = PlayerCollision.BubbleTotal;
             BubbleTotal.text = BubbleTotalScore.ToString(); 
