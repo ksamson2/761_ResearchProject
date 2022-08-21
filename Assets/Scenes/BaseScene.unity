@@ -7172,16 +7172,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreathingClouds:
   - GameObject: {fileID: 981014153195731871, guid: 4500c0af00af9014397951fd1a777ff6, type: 3}
-    MinimumY: 1
-    MaximumY: 3.5
+    MinimumY: -1
+    MaximumY: 1.5
     MarshmallowCount: 4
   - GameObject: {fileID: 1523143953291045971, guid: 754b7befe73a4ee499f3a4f2ce12bb32, type: 3}
     MinimumY: -1
-    MaximumY: 4
+    MaximumY: 3.5
     MarshmallowCount: 4
   - GameObject: {fileID: 4208658228611356113, guid: 18401d6e6dec1e145844b0c260c0ab50, type: 3}
-    MinimumY: 1.5
-    MaximumY: 3.5
+    MinimumY: 0
+    MaximumY: 2.5
     MarshmallowCount: 4
   ObstacleObjects:
   - GameObject: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
@@ -7193,6 +7193,10 @@ MonoBehaviour:
   - GameObject: {fileID: 8512370715664508943, guid: da961e7d6e0f0a54f8e7c8040ca93577, type: 3}
     MinimumY: -2.5
     MaximumY: -2.7
+  NormalClouds:
+  - GameObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
+    MinimumY: -1.5
+    MaximumY: 2
   Marshmallow: {fileID: 2906765253557375979, guid: faad1c4145871ba469235d61b444c68a, type: 3}
   Bubble:
     MaximumY: -1
@@ -7205,7 +7209,7 @@ MonoBehaviour:
   minXSpawnRange: 3
   timeBetweenSpawn: 4
   TimeBetweenSpawnEndRate: 7
-  TimeBetweenBreathingClouds: 45
+  TimeBetweenBreathingClouds: 35
   SpacingBetweenMarshmallows: 1.6
   SpacingBetweenClouds: 6
   ScoreManager: {fileID: 0}
@@ -8032,7 +8036,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375887036}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 36c1cba43befec14c955aa8a4f5cefbc, type: 3}

@@ -29,6 +29,8 @@ public class SpawnObstacles : MonoBehaviour
     public List<BreathingExerciseClouds> BreathingClouds;
     public List<Obstacles> ObstacleObjects;
 
+    public List<Obstacles> NormalClouds;
+
     public GameObject Marshmallow;
     public BubbleObject Bubble;
     public float xSpawnRange;
@@ -68,11 +70,11 @@ public class SpawnObstacles : MonoBehaviour
         {
             SpawnRockObstacles(RandomX);
             spawnRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
+            SpawnNormalClouds();
         }
 
         if (Time.time > Bubble.SpawnRate)
         {
-
             var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
             var BubbleX = Random.Range(Bubble.MinimumX, Bubble.MaximumX);
             ObjectPooler.Instance.SpawnFromPool("Bubble", BubbleX, BubbleY);
@@ -119,6 +121,18 @@ public class SpawnObstacles : MonoBehaviour
                 var marshmallowX = cloudSpawnX + (marshmallowIndex * SpacingBetweenMarshmallows) - 2;
                 Instantiate(Marshmallow, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
             }
+        }
+    }
+
+    void SpawnNormalClouds()
+    {
+        float xposition = 2;
+        for (var i = 0; i < NormalClouds.Count; i++)
+        {
+            var CurrentCloud = NormalClouds[i];
+            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100);
+            var cloudSpawnY = Random.Range(CurrentCloud.MinimumY, CurrentCloud.MaximumY);
+            Instantiate(CurrentCloud.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
         }
     }
 }

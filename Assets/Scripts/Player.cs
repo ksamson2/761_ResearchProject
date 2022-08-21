@@ -51,7 +51,14 @@ public class Player : MonoBehaviour
             Animator.ResetTrigger("IsJumping");
         }
 
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Animator.ResetTrigger("IsJumping");
+        }
+
     }
+ 
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
