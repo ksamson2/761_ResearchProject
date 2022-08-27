@@ -11,9 +11,9 @@ public class PlayerCollision : MonoBehaviour
     public static float TotalTeaLeaves = 0;
     public static float BubbleTotal;
     private GameObject Player;
-    public GameObject InputField;
+    public GameObject DecenteringText;
+    public GameObject ContinueImage;
     public GameObject SubmitThoughtButtonObject;
-    public TMP_InputField UserInput;
 
     private GameObject bubble;
     [SerializeField]
@@ -21,17 +21,44 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private AudioSource TeaLeaveSound;
     public static float LIFE_POINTS_AMOUNT = 12;
+    public float HitRate;
+    private bool IsHit = false; 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        
-        InputField.SetActive(false);
-        SubmitThoughtButtonObject.SetActive(false);
+
+        DecenteringText.SetActive(false);
+        ContinueImage.SetActive(false);
+        SubmitThoughtButtonObject.SetActive(false); 
+    }
+    private void Update()
+    {
+       
+        if (Input.GetKey(KeyCode.KeypadEnter))
+        {
+            DecenteringButton();
+        }
+        if (Time.time < HitRate)
+        {
+            if (IsHit)
+            {
+                Player.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            }
+        }
+        else
+        {
+            Player.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            IsHit = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Obstacle") 
         {
+            IsHit = true;
+            HitRate = Time.time + 2; 
+           //  Player.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+
             if (MarshmallowPoints >= LIFE_POINTS_AMOUNT)
             {
                 MarshmallowPoints -= LIFE_POINTS_AMOUNT;
@@ -63,19 +90,27 @@ public class PlayerCollision : MonoBehaviour
             {
                 BubbleSound.Play();
                 PauseGame();
-                InputField.SetActive(true);
-                UserInput.ActivateInputField();
+                //InputField.SetActive(true);
+                // UserInput.ActivateInputField();
                 SubmitThoughtButtonObject.SetActive(true);
+                DecenteringText.SetActive(true);
+                ContinueImage.SetActive(true);
                 Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
                 SubmitThoughtButton.onClick.AddListener(DecenteringButton);
+
             }
+            
         }
     }
+
+
     void DecenteringButton()
     {
-        InputField.SetActive(false);
-        UserInput.GetComponentInChildren<TMP_InputField>().text = "";
+        // InputField.SetActive(false);
+        // UserInput.GetComponentInChildren<TMP_InputField>().text = "";
         SubmitThoughtButtonObject.SetActive(false);
+        DecenteringText.SetActive(false);
+        ContinueImage.SetActive(false);
         bubble.GetComponent<Renderer>().material.color = Color.black;
         bubble.GetComponent<Bubble>().FloatAway = true;
         ResumeGame();

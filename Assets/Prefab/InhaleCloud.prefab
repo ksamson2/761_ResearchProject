@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7720887991563218531}
   - component: {fileID: 315525393195763718}
   - component: {fileID: -8000370143018613817}
+  - component: {fileID: -3786018303768224805}
   m_Layer: 0
   m_Name: InhaleCloud
   m_TagString: Cloud
@@ -121,7 +122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 4c3294d2466765c41b761584de8580b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,3 +134,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3786018303768224805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806922298157850601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de02995650fd664681600524c85a952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
