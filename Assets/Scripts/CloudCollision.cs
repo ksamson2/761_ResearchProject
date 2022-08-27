@@ -6,7 +6,7 @@ public class CloudCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "BreathingCloud")
+        if(collision.gameObject.tag == "Cloud")
         {
             Destroy(gameObject);
         }
@@ -14,7 +14,7 @@ public class CloudCollision : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "BreathingCloud")
+        if (collision.gameObject.tag == "Cloud")
         {
             Destroy(gameObject);
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5316799503508195871}
   - component: {fileID: 5063219368443585620}
   - component: {fileID: -2027301037007015576}
+  - component: {fileID: 3624797257600684859}
   m_Layer: 0
   m_Name: BA_InhaleCloud
   m_TagString: BreathingCloud
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981014153195731871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.4811, y: 4.2467, z: 0}
-  m_LocalScale: {x: 0.34520787, y: 0.30396172, z: 0.2904278}
+  m_LocalPosition: {x: 25.9635, y: 3.9091, z: 0}
+  m_LocalScale: {x: 1.0470265, y: 0.92192566, z: 0.88087684}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: a25f9349c7b325b468a13985e98de71d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a086d7dbf8111a44bb560a81d8d763f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013342857, y: -0.121765375}
+  m_Offset: {x: -0.15948653, y: -0.059782684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
+    oldSize: {x: 6.23, y: 3.18}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.213499, y: 4.679294}
+  m_Size: {x: 4.6801543, y: 1.0429736}
   m_EdgeRadius: 0
 --- !u!50 &-2027301037007015576
 Rigidbody2D:
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3624797257600684859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981014153195731871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de02995650fd664681600524c85a952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Cloud")
+        if (collision.gameObject.tag == "Cloud" || collision.gameObject.tag == "BreathingCloud")
         {
             RunOnCloudSound.Play();
             multiJumpCount = 1;

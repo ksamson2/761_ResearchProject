@@ -7423,10 +7423,15 @@ MonoBehaviour:
   minXSpawnRange: 3
   timeBetweenSpawn: 4
   TimeBetweenSpawnEndRate: 7
+  NormalCloudRate: 5
   TimeBetweenBreathingClouds: 50
   SpacingBetweenMarshmallows: 1.6
   SpacingBetweenClouds: 6
   ScoreManager: {fileID: 0}
+  Colliders: []
+  Radius: 3
+  CurrentCloudIndex: 0
+  SpawnCollisionRadius: 5
   IncreaseCloudSize: 0.1
 --- !u!4 &1888781988
 Transform:
@@ -7945,6 +7950,7 @@ MonoBehaviour:
   SubmitThoughtButtonObject: {fileID: 1992638176}
   BubbleSound: {fileID: 1981544542}
   TeaLeaveSound: {fileID: 1981544543}
+  HitRate: 2
 --- !u!50 &1981544541
 Rigidbody2D:
   serializedVersion: 4

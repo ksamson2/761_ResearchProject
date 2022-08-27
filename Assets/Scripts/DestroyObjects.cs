@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,25 +6,20 @@ using UnityEngine;
 public class DestroyObjects : MonoBehaviour
 {
     // Start is called before the first frame update
+    private List<string> CollisionTags = new List<string> { "Obstacle", "Cloud", "Tutorial", "MarshmallowPoint", "Bubble", "BreathingCloud" };
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        string Tag = collision.gameObject.tag; 
+        if (Tag == "Player")
+        {
+            //Destroy(collision.gameObject);
+        }
 
-        //if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Cloud" || collision.gameObject.tag == "Player")
-        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Cloud" || collision.gameObject.tag == "Player")
-        {
-            Destroy(collision.gameObject);   
-        }
-        if(collision.gameObject.tag == "Tutorial")
+        bool FindTagInList = CollisionTags.Contains(Tag);
+        if(FindTagInList)
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "MarshmallowPoint")
-        {
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "Bubble")
-        {
-            Destroy(collision.gameObject);
-        }
+
     }
 }
