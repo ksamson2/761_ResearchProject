@@ -9,13 +9,22 @@ public class MainMenu : MonoBehaviour
     public GameObject PlayButtonObject;
     public GameObject QuitButtonObject;
 
+    private bool GameIsPaused = false;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            MainMenuPanel.SetActive(true);
-            PauseGame();
+           
+           if(GameIsPaused)
+            {
+                ResumeGame();
+            } 
+           else
+            {
+                PauseGame();
+            }
             Button PlayButton = PlayButtonObject.GetComponent<Button>();
             Button QuitButton = QuitButtonObject.GetComponent<Button>();
             PlayButton.onClick.AddListener(ResumeGame);
@@ -25,18 +34,23 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
+        MainMenuPanel.SetActive(true);
+        GameIsPaused = true;
         Time.timeScale = 0;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
+        GameIsPaused = false;
+        MainMenuPanel.SetActive(false);
         Time.timeScale = 1;
     }
 
-    void ExitGame()
+    public void ExitGame()
     {
+        MainMenuPanel.SetActive(false);
         Application.Quit();
     }
 }

@@ -56,8 +56,7 @@ public class PlayerCollision : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle") 
         {
             IsHit = true;
-            HitRate = Time.time + 2; 
-           //  Player.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            HitRate = Time.time + 2;
 
             if (MarshmallowPoints >= LIFE_POINTS_AMOUNT)
             {

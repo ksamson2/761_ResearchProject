@@ -61,7 +61,11 @@ public class SpawnObstacles : MonoBehaviour
 
     void Update()
     {
-       Spawn();
+        if(ShouldSpawnObstacles)
+        {
+            Spawn();
+        }
+       
     }
 
     void Spawn()
@@ -89,12 +93,10 @@ public class SpawnObstacles : MonoBehaviour
 
         if (Time.time > BreathingCloudsSpawnRate)
         {
-            ShouldSpawnObstacles = false; 
             SpawnBreathingClouds();
             BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
             IncreaseCloudSize += 0.01f;
         }
-        ShouldSpawnObstacles = true;
     }
 
     void SpawnRockObstacles(float RandomX)

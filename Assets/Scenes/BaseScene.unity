@@ -736,9 +736,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 207210561}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 338630961}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -747,7 +747,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!222 &158676141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -774,7 +774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.99997, y: -83}
+  m_AnchoredPosition: {x: 50, y: -74}
   m_SizeDelta: {x: 428.8517, y: 179.8301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &176901043
@@ -885,8 +885,8 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   - {fileID: 1888781988}
-  - {fileID: 1981544534}
   - {fileID: 370806735}
+  - {fileID: 1981544534}
   - {fileID: 802659917}
   - {fileID: 2031933652}
   - {fileID: 1216023065}
@@ -2056,9 +2056,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 207210561}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 338630961}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2348,7 +2348,7 @@ Transform:
   - {fileID: 280433822}
   - {fileID: 1129553975}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375887036 stripped
 GameObject:
@@ -4596,11 +4596,6 @@ Transform:
   m_Father: {fileID: 2031933652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &971356923 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7398900094898590172, guid: dcf802f22c2ec574c9c1519ba05c2e3b, type: 3}
-  m_PrefabInstance: {fileID: 772681572}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &971356924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3456842405421168917, guid: dcf802f22c2ec574c9c1519ba05c2e3b, type: 3}
@@ -5615,11 +5610,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1283299968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6685723296168092622, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
-  m_PrefabInstance: {fileID: 1621181729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1283299969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714672071749183539, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
@@ -6286,16 +6276,8 @@ MonoBehaviour:
   TutorialPopUps:
   - {fileID: 1563649222}
   - {fileID: 632668625}
-  - {fileID: 971356923}
-  - {fileID: 1716509785}
-  - {fileID: 1283299968}
-  - {fileID: 1499894161}
+  - {fileID: 1563649222}
   StartSpawnObstacles: {fileID: 1888781986}
---- !u!1 &1499894161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6685723296168092622, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
-  m_PrefabInstance: {fileID: 841851026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511671126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,11 +6707,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671402053}
   m_CullTransparentMesh: 1
---- !u!1 &1716509785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6685723296168092622, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
-  m_PrefabInstance: {fileID: 321199181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1716509786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714672071749183539, guid: cb225fa7becadc74d961bc3962051bbd, type: 3}
@@ -8563,7 +8540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1992638179}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 375887036}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1992638179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9107,7 +9096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 26, y: -50}
+  m_AnchoredPosition: {x: -11, y: 24}
   m_SizeDelta: {x: -209.2469, y: -118.3101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085579250
@@ -9373,7 +9362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalScale.x

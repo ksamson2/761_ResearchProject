@@ -19,13 +19,13 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopUps[i].SetActive(false);
             }
-            CameraMovement.Pause = false;
-            SpawnObstacles.ShouldSpawnObstacles = true;
+            //CameraMovement.Pause = false;
+           // SpawnObstacles.ShouldSpawnObstacles = true;
         }
 
         if (PopUpIndex == 0)
         {
-            CameraMovement.Pause = true; 
+            // CameraMovement.Pause = true; 
             TutorialPopUps[PopUpIndex].SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
                 TutorialPopUps[PopUpIndex].SetActive(false);
@@ -49,35 +49,7 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopUps[PopUpIndex].SetActive(false);
                 PopUpIndex++;
             }
-        }
-        else if (PopUpIndex == 3)
-        {
-            TutorialPopUps[PopUpIndex].SetActive(true);
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                TutorialPopUps[PopUpIndex].SetActive(false);
-                PopUpIndex++;
-                
-            }
-        }
-        else if( PopUpIndex == 4)
-        {
-            TutorialPopUps[PopUpIndex].SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                TutorialPopUps[PopUpIndex].SetActive(false);
-                PopUpIndex++;
-            }
-        }
-        else if (PopUpIndex == 5)
-        {
-            TutorialPopUps[PopUpIndex].SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                TutorialPopUps[PopUpIndex].SetActive(false);
-                PopUpIndex++;
-                SpawnObstacles.ShouldSpawnObstacles = true;
-            }
+            SpawnObstacles.ShouldSpawnObstacles = true;
         }
     }
 }
