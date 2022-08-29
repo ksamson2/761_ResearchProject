@@ -12,7 +12,6 @@ public class PlayerCollision : MonoBehaviour
     public static float BubbleTotal;
     private GameObject Player;
     public GameObject DecenteringText;
-    public GameObject ContinueImage;
     public GameObject SubmitThoughtButtonObject;
 
     private GameObject bubble;
@@ -22,21 +21,23 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource TeaLeaveSound;
     public static float LIFE_POINTS_AMOUNT = 12;
     public float HitRate;
-    private bool IsHit = false; 
+    private bool IsHit = false;
+    private bool IsCollidedWithBubble = false;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
 
         DecenteringText.SetActive(false);
-        ContinueImage.SetActive(false);
         SubmitThoughtButtonObject.SetActive(false); 
     }
     private void Update()
     {
        
-        if (Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return) && IsCollidedWithBubble)
         {
+            Debug.Log("test");
             DecenteringButton();
+            IsCollidedWithBubble = false;
         }
         if (Time.time < HitRate)
         {
@@ -89,11 +90,9 @@ public class PlayerCollision : MonoBehaviour
             {
                 BubbleSound.Play();
                 PauseGame();
-                //InputField.SetActive(true);
-                // UserInput.ActivateInputField();
+                IsCollidedWithBubble = true;
                 SubmitThoughtButtonObject.SetActive(true);
                 DecenteringText.SetActive(true);
-                ContinueImage.SetActive(true);
                 Button SubmitThoughtButton = SubmitThoughtButtonObject.GetComponent<Button>();
                 SubmitThoughtButton.onClick.AddListener(DecenteringButton);
 
@@ -109,7 +108,6 @@ public class PlayerCollision : MonoBehaviour
         // UserInput.GetComponentInChildren<TMP_InputField>().text = "";
         SubmitThoughtButtonObject.SetActive(false);
         DecenteringText.SetActive(false);
-        ContinueImage.SetActive(false);
         bubble.GetComponent<Renderer>().material.color = Color.black;
         bubble.GetComponent<Bubble>().FloatAway = true;
         ResumeGame();

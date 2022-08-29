@@ -19,13 +19,11 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopUps[i].SetActive(false);
             }
-            //CameraMovement.Pause = false;
-           // SpawnObstacles.ShouldSpawnObstacles = true;
+            SpawnObstacles.ShouldSpawnObstacles = true;
         }
 
         if (PopUpIndex == 0)
         {
-            // CameraMovement.Pause = true; 
             TutorialPopUps[PopUpIndex].SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.KeypadEnter)){
                 TutorialPopUps[PopUpIndex].SetActive(false);
