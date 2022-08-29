@@ -53,4 +53,11 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         Application.Quit();
     }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        MainMenuPanel.SetActive(false);
+        GameOver.Restart();
+    }
 }

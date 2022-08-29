@@ -16,8 +16,14 @@ public class GameOver : MonoBehaviour
       }  
     }
 
-    public void Restart()
+    public static void Restart()
     {
+        PlayerPrefs.SetFloat("FlowerBadgesTotal", PlayerCollision.FlowerBadgesCollected);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerCollision.MarshmallowPoints = 0;
+        PlayerCollision.FlowerBadgesCollected = 0;
+        ScoreManager.score = 0;
+        PlayerCollision.BubbleTotal = 0;
+        PlayerCollision.TotalTeaLeaves = 0; 
     }
 }

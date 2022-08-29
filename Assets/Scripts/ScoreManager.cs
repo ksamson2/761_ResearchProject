@@ -10,7 +10,10 @@ public class ScoreManager : MonoBehaviour
     public Text TeaLeavesTotal;
     public Text BubbleTotal;
     public Text TotalScore;
-    public static float score { get; private set; }
+    public Text FlowerBadges;
+    public Text FlowerBadgeScore;
+    public static float score;
+
 
     // Update is called once per frame
     void Update()
@@ -23,6 +26,10 @@ public class ScoreManager : MonoBehaviour
             int Seconds = (int)score % 60;
             ScoreText.text = ((int)score).ToString();
             ScoreTextInGame.text = Minutes.ToString() + ":" + Seconds.ToString();
+
+            float FlowerBadgesTotal = PlayerCollision.FlowerBadgesCollected;
+            FlowerBadges.text = FlowerBadgesTotal.ToString();
+            FlowerBadgeScore.text = FlowerBadgesTotal.ToString();
 
             float BubbleTotalScore = PlayerCollision.BubbleTotal;
             BubbleTotal.text = BubbleTotalScore.ToString(); 

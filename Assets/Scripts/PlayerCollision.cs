@@ -8,6 +8,7 @@ public class PlayerCollision : MonoBehaviour
 {
  
     public static float MarshmallowPoints;
+    public static float FlowerBadgesCollected = 0;
     public static float TotalTeaLeaves = 0;
     public static float BubbleTotal;
     private GameObject Player;
@@ -19,6 +20,8 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource BubbleSound;
     [SerializeField]
     private AudioSource TeaLeaveSound;
+    [SerializeField]
+    private AudioSource RockHitSound;
     public static float LIFE_POINTS_AMOUNT = 12;
     public float HitRate;
     private bool IsHit = false;
@@ -35,7 +38,6 @@ public class PlayerCollision : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.Return) && IsCollidedWithBubble)
         {
-            Debug.Log("test");
             DecenteringButton();
             IsCollidedWithBubble = false;
         }
@@ -54,8 +56,9 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Obstacle") 
+        if (collision.gameObject.tag == "Obstacle")
         {
+            RockHitSound.Play();
             IsHit = true;
             HitRate = Time.time + 2;
 
@@ -73,11 +76,20 @@ public class PlayerCollision : MonoBehaviour
         {
             TeaLeaveSound.Play();
             Destroy(collision.gameObject);
-            if(MarshmallowPoints < LIFE_POINTS_AMOUNT)
+            if (MarshmallowPoints < LIFE_POINTS_AMOUNT)
             {
                 MarshmallowPoints++;
             }
             TotalTeaLeaves++;
+        }
+        if (collision.gameObject.tag == "Tutorial")
+        {
+            RockHitSound.Play();
+        }
+        if(collision.gameObject.tag == "FlowerBadge")
+        {
+            FlowerBadgesCollected++;
+            Destroy(collision.gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
