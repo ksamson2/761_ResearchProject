@@ -15,6 +15,8 @@ public class PlayerCollision : MonoBehaviour
     public GameObject DecenteringText;
     public GameObject SubmitThoughtButtonObject;
 
+    public Rigidbody2D ShuheiRB;
+    public GameObject RightBorder; 
     private GameObject bubble;
     [SerializeField]
     private AudioSource BubbleSound;
@@ -22,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource TeaLeaveSound;
     [SerializeField]
     private AudioSource RockHitSound;
-    public static float LIFE_POINTS_AMOUNT = 12;
+    public static float COMPLETE_TEA_LEAF_VALUE = 12;
     public float HitRate;
     private bool IsHit = false;
     private bool IsCollidedWithBubble = false;
@@ -35,7 +37,6 @@ public class PlayerCollision : MonoBehaviour
     }
     private void Update()
     {
-       
         if (Input.GetKeyDown(KeyCode.Return) && IsCollidedWithBubble)
         {
             DecenteringButton();
@@ -61,22 +62,25 @@ public class PlayerCollision : MonoBehaviour
             RockHitSound.Play();
             IsHit = true;
             HitRate = Time.time + 2;
-
-            if (MarshmallowPoints >= LIFE_POINTS_AMOUNT)
-            {
-                MarshmallowPoints -= LIFE_POINTS_AMOUNT;
-            }
-            else
-            {
-                //Player.gameObject.GetComponent<Animator>().enabled = false;
-                //Destroy(Player.gameObject);
-            }
+           
         }
         if (collision.gameObject.tag == "MarshmallowPoint")
         {
             TeaLeaveSound.Play();
             Destroy(collision.gameObject);
-            if (MarshmallowPoints < LIFE_POINTS_AMOUNT)
+
+            if (MarshmallowPoints == COMPLETE_TEA_LEAF_VALUE)
+            {
+                MarshmallowPoints -= COMPLETE_TEA_LEAF_VALUE;
+
+                if (transform.position.x + 2 < RightBorder.transform.position.x)
+                {
+                    ShuheiRB.GetComponent<Rigidbody2D>().transform.position = transform.position + new Vector3(2, 0, 0);
+                }
+               
+            }
+
+            if (MarshmallowPoints < COMPLETE_TEA_LEAF_VALUE)
             {
                 MarshmallowPoints++;
             }
