@@ -24,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource TeaLeaveSound;
     [SerializeField]
     private AudioSource RockHitSound;
-    public static float COMPLETE_TEA_LEAF_VALUE = 12;
+    public static float COMPLETE_TEA_LEAF_VALUE = 11; // Array indexed - tea leaf total is 12
     public float HitRate;
     private bool IsHit = false;
     private bool IsCollidedWithBubble = false;
