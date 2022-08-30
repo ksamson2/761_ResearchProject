@@ -78,11 +78,7 @@ public class SpawnObstacles : MonoBehaviour
             spawnRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
             
         }
-        if(Time.time > NormalCloudRate)
-        {
-            SpawnNormalClouds();
-            NormalCloudRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
-        }
+      
         if (Time.time > Bubble.SpawnRate)
         {
             var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
@@ -96,6 +92,14 @@ public class SpawnObstacles : MonoBehaviour
             SpawnBreathingClouds();
             BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
             IncreaseCloudSize += 0.01f;
+        } 
+        else
+        {
+            if (Time.time > NormalCloudRate)
+            {
+                SpawnNormalClouds();
+                NormalCloudRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
+            }
         }
     }
 

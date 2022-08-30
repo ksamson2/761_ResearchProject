@@ -24,6 +24,10 @@ public class PlayerCollision : MonoBehaviour
     private AudioSource TeaLeaveSound;
     [SerializeField]
     private AudioSource RockHitSound;
+    [SerializeField]
+    private AudioSource FlowerPickupSound;
+    [SerializeField]
+    private AudioSource XLeapSound;
     public static float COMPLETE_TEA_LEAF_VALUE = 11; // Array indexed - tea leaf total is 12
     public float HitRate;
     private bool IsHit = false;
@@ -71,6 +75,7 @@ public class PlayerCollision : MonoBehaviour
 
             if (MarshmallowPoints == COMPLETE_TEA_LEAF_VALUE)
             {
+                XLeapSound.Play();
                 MarshmallowPoints -= COMPLETE_TEA_LEAF_VALUE;
 
                 if (transform.position.x + 2 < RightBorder.transform.position.x)
@@ -92,6 +97,7 @@ public class PlayerCollision : MonoBehaviour
         }
         if(collision.gameObject.tag == "FlowerBadge")
         {
+            FlowerPickupSound.Play();
             FlowerBadgesCollected++;
             Destroy(collision.gameObject);
         }
