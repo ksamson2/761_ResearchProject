@@ -42,12 +42,11 @@ public class SpawnObstacles : MonoBehaviour
     public float NormalCloudRate;
 
     public float TimeBetweenBreathingClouds;
-    private float BreathingCloudsSpawnRate;
+    public static float BreathingCloudsSpawnRate;
     public float SpacingBetweenMarshmallows = 1.6f;
     public float SpacingBetweenClouds = 1.5f;
     public ScoreManager ScoreManager;
     public static bool ShouldSpawnObstacles = false;
-    public Collider2D[] Colliders;
 
     public float Radius;
     public int CurrentCloudIndex = 0;
@@ -61,24 +60,24 @@ public class SpawnObstacles : MonoBehaviour
 
     void Update()
     {
-        if(ShouldSpawnObstacles)
+        if (ShouldSpawnObstacles)
         {
             Spawn();
         }
-       
+
     }
 
     void Spawn()
     {
         float RandomX = Random.Range(minXSpawnRange, xSpawnRange);
-       
+
         if (Time.time > spawnRate)
         {
             SpawnRockObstacles(RandomX);
             spawnRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
-            
+
         }
-      
+
         if (Time.time > Bubble.SpawnRate)
         {
             var BubbleY = Random.Range(Bubble.MinimumY, Bubble.MaximumY);
@@ -92,12 +91,12 @@ public class SpawnObstacles : MonoBehaviour
             SpawnBreathingClouds();
             BreathingCloudsSpawnRate = Time.time + TimeBetweenBreathingClouds;
             IncreaseCloudSize += 0.01f;
-        } 
+        }
         else
         {
-            if (Time.time > NormalCloudRate)
+            if (Time.time > NormalCloudRate && Time.time < BreathingCloudsSpawnRate - 12)
             {
-                SpawnNormalClouds();
+                //SpawnNormalClouds();
                 NormalCloudRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
             }
         }
@@ -107,10 +106,10 @@ public class SpawnObstacles : MonoBehaviour
     {
         int RandomIndex = Random.Range(0, ObstaclesUnlockedTotal);
         var ObstacleToSpawn = ObstacleObjects[RandomIndex];
-        var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn. MaximumY);
+        var ObstacleY = Random.Range(ObstacleToSpawn.MinimumY, ObstacleToSpawn.MaximumY);
         Instantiate(ObstacleToSpawn.GameObject, transform.position + new Vector3(RandomX, ObstacleY, 0), transform.rotation);
     }
-    public void AddObstacle ()
+    public void AddObstacle()
     {
         if (ObstaclesUnlockedTotal < ObstaclesToUnlockMax)
             ObstaclesUnlockedTotal++;
@@ -125,8 +124,9 @@ public class SpawnObstacles : MonoBehaviour
         for (var i = 0; i < BreathingClouds.Count; i++)
         {
             var mindfulnessObj = BreathingClouds[i];
-            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100 );
+            var cloudSpawnX = xposition + i * SpacingBetweenClouds + (IncreaseCloudSize * 100);
             var cloudSpawnY = Random.Range(mindfulnessObj.MinimumY, mindfulnessObj.MaximumY);
+
             GameObject Cloud = Instantiate(mindfulnessObj.GameObject, transform.position + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);
             var CurrentCloudScale = Cloud.transform.localScale;
             Cloud.transform.localScale = new Vector3(CurrentCloudScale.x + IncreaseCloudSize, CurrentCloudScale.y + IncreaseCloudSize, CurrentCloudScale.z);
@@ -135,17 +135,17 @@ public class SpawnObstacles : MonoBehaviour
                 var marshmallowX = cloudSpawnX + (marshmallowIndex * SpacingBetweenMarshmallows) - 2;
                 Instantiate(Marshmallow, transform.position + new Vector3(marshmallowX, cloudSpawnY + 2, 0), transform.rotation);
             }
+
         }
     }
 
     void SpawnNormalClouds()
     {
         float xposition = 5;
-        var CurrentCloud = NormalClouds[CurrentCloudIndex];
-        Vector3 SpawnPosition;
+        var CurrentCloud = NormalClouds[CurrentCloudIndex];;
         var cloudSpawnX = xposition + 1 * SpacingBetweenClouds + (IncreaseCloudSize * 100);
         var cloudSpawnY = Random.Range(CurrentCloud.MinimumY, CurrentCloud.MaximumY);
-        SpawnPosition = new Vector3(cloudSpawnX, cloudSpawnY, 0);
+        Vector3 SpawnPosition = new Vector3(cloudSpawnX, cloudSpawnY, 0);
         //if (!Physics.CheckSphere(SpawnPosition, SpawnCollisionRadius))
         //{
         //Instantiate(CurrentCloud.GameObject, transform.position + Random.insideUnitSphere * Radius + new Vector3(cloudSpawnX, cloudSpawnY, 0), transform.rotation);

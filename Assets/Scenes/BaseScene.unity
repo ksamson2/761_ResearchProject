@@ -557,7 +557,7 @@ RectTransform:
   m_Children:
   - {fileID: 1992638177}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -964,6 +964,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   - {fileID: 1888781988}
+  - {fileID: 1357887109}
   - {fileID: 370806735}
   - {fileID: 861034317}
   - {fileID: 1981544534}
@@ -1314,7 +1315,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 32bc874d6ba40e442bc1452b097a98e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2161,7 +2162,7 @@ RectTransform:
   m_Children:
   - {fileID: 863428730}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2619,7 +2620,7 @@ Transform:
   - {fileID: 280433822}
   - {fileID: 1129553975}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375887036 stripped
 GameObject:
@@ -2945,7 +2946,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: addbc8ab32914464393b3bafc62d654e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2987,7 +2988,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 207210559}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &494579426
 MonoBehaviour:
@@ -3243,7 +3244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 519420028}
-  ParallaxEffect: 1.3
+  ParallaxEffect: 1
 --- !u!1 &555523796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 519420028}
-  ParallaxEffect: 1.3
+  ParallaxEffect: 1
 --- !u!212 &555523799
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3897,7 +3898,7 @@ Transform:
   m_Children:
   - {fileID: 9691349}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802801528
 GameObject:
@@ -4296,7 +4297,7 @@ RectTransform:
   - {fileID: 1692874524}
   - {fileID: 2043518622}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5579,7 +5580,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: addbc8ab32914464393b3bafc62d654e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5689,7 +5690,7 @@ RectTransform:
   - {fileID: 287050218}
   - {fileID: 310040828}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6149,6 +6150,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1357887108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357887109}
+  - component: {fileID: 1357887110}
+  m_Layer: 0
+  m_Name: Secondary Spawn Point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357887109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357887108}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 55.83, y: -0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 207210559}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357887110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357887108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fcd8af4075c2a41839c48198df7ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnRate: 12
+  Flower: {fileID: 7735646480040983991, guid: 8cbda321439c7814ba62abd8b18ec31b, type: 3}
+  FlowerBadgeMinX: 2
+  FlowerBadgeMaxX: 6
+  FlowerBadgeMinY: -3
+  FlowerBadgeMaxY: -2
+  NormalCloudRate: 5.5
+  timeBetweenSpawn: 4
+  TimeBetweenSpawnEndRate: 7
+  SpacingBetweenClouds: 8
+  NormalClouds:
+  - GameObject: {fileID: 1806922298157850601, guid: 3b563b4e4543e964394af55cb42c0e9c, type: 3}
+    MinimumY: -1.5
+    MaximumY: 2
+  CurrentCloudIndex: 0
 --- !u!1001 &1378874603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6361,7 +6421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 519420028}
-  ParallaxEffect: 1
+  ParallaxEffect: 0.8
 --- !u!1 &1476383197
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,7 +6569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 519420028}
-  ParallaxEffect: 1.3
+  ParallaxEffect: 1
 --- !u!212 &1482752778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6598,7 +6658,7 @@ Transform:
   - {fileID: 1283299969}
   - {fileID: 841851027}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1498454381
 MonoBehaviour:
@@ -7399,7 +7459,7 @@ RectTransform:
   - {fileID: 300005673}
   - {fileID: 1904170102}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7896,7 +7956,6 @@ GameObject:
   - component: {fileID: 1888781988}
   - component: {fileID: 1888781987}
   - component: {fileID: 1888781989}
-  - component: {fileID: 1888781990}
   m_Layer: 0
   m_Name: Spawn Point
   m_TagString: Untagged
@@ -7927,7 +7986,7 @@ MonoBehaviour:
     MarshmallowCount: 4
   - GameObject: {fileID: 4208658228611356113, guid: 18401d6e6dec1e145844b0c260c0ab50, type: 3}
     MinimumY: 0
-    MaximumY: 2.5
+    MaximumY: 2.7
     MarshmallowCount: 4
   ObstacleObjects:
   - GameObject: {fileID: 1509035369186924886, guid: dacde3f3d07777642a6d1b61f61fc6c8, type: 3}
@@ -7950,7 +8009,7 @@ MonoBehaviour:
     MaximumX: 10
     MinimumX: 7
     TimeBetweenSpawn: 25
-    SpawnRate: 0
+    SpawnRate: 5
   xSpawnRange: 7
   minXSpawnRange: 3
   timeBetweenSpawn: 4
@@ -7958,9 +8017,8 @@ MonoBehaviour:
   NormalCloudRate: 5
   TimeBetweenBreathingClouds: 50
   SpacingBetweenMarshmallows: 1.6
-  SpacingBetweenClouds: 6
+  SpacingBetweenClouds: 8
   ScoreManager: {fileID: 0}
-  Colliders: []
   Radius: 3
   CurrentCloudIndex: 0
   SpawnCollisionRadius: 5
@@ -7973,7 +8031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888781986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.45, y: 0, z: 0}
+  m_LocalPosition: {x: 32.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7993,24 +8051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToIncreaseDifficulty: 240
---- !u!114 &1888781990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888781986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2fcd8af4075c2a41839c48198df7ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnRate: 12
-  Flower: {fileID: 7735646480040983991, guid: 8cbda321439c7814ba62abd8b18ec31b, type: 3}
-  FlowerBadgeMinX: 2
-  FlowerBadgeMaxX: 6
-  FlowerBadgeMinY: -3
-  FlowerBadgeMaxY: -2
 --- !u!1 &1895780944
 GameObject:
   m_ObjectHideFlags: 0
@@ -8184,7 +8224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1904170102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8202,7 +8242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.8, y: 111.9}
+  m_AnchoredPosition: {x: 6.8, y: 160.4}
   m_SizeDelta: {x: 319.7543, y: 97.6987}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1904170103
@@ -8225,7 +8265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Think of a troubling thought
+  m_text: Think of something you want to let go off
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f230edb86230dc46ba0876566859bd2, type: 2}
   m_sharedMaterial: {fileID: 3026573372821497525, guid: 5f230edb86230dc46ba0876566859bd2, type: 2}
@@ -8252,8 +8292,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8288,7 +8328,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -27.790268, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8728,7 +8768,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8db149dfd16bb1d4784aad946815f887, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47ae916cf414c01488a6c626867916aa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8852,7 +8892,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 875b212d43daa9b41b87299b3f786e1b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 600687fd5bd59b84683b44bb0ccc6a38, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8948,7 +8988,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 36c1cba43befec14c955aa8a4f5cefbc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 93a0eaaa99b491445a7d8815b3953330, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.335
   m_Pitch: 1
@@ -9358,7 +9398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.624808, y: -64.37287}
+  m_AnchoredPosition: {x: -10.624808, y: 71}
   m_SizeDelta: {x: 193.1418, y: 78.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992638178
@@ -9647,7 +9687,7 @@ Transform:
   - {fileID: 919616576}
   - {fileID: 2010034878}
   m_Father: {fileID: 207210559}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2031933653
 MeshRenderer:
@@ -9876,7 +9916,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 32bc874d6ba40e442bc1452b097a98e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10290,7 +10330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 149962072779887803, guid: aad3401cf6115114e8adf6d019392552, type: 3}
       propertyPath: m_LocalScale.x

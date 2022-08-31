@@ -12,7 +12,7 @@ public class DestroyObjects : MonoBehaviour
         string Tag = collision.gameObject.tag; 
         if (Tag == "Player")
         {
-            // Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
         }
 
         bool FindTagInList = CollisionTags.Contains(Tag);
