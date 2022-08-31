@@ -26,4 +26,10 @@ public class GameOver : MonoBehaviour
         PlayerCollision.BubbleTotal = 0;
         PlayerCollision.TotalTeaLeaves = 0; 
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }
