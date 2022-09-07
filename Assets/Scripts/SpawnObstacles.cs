@@ -23,8 +23,8 @@ public class SpawnObstacles : MonoBehaviour
         public float SpawnRate;
     }
 
-    public static int ObstaclesUnlockedTotal = 2;
-    public static int ObstaclesToUnlockMax = 1;
+    public static int ObstaclesUnlockedTotal = 1;
+    public static int ObstaclesToUnlockMax = 4;
 
     public List<BreathingExerciseClouds> BreathingClouds;
     public List<Obstacles> ObstacleObjects;
@@ -96,7 +96,6 @@ public class SpawnObstacles : MonoBehaviour
         {
             if (Time.time > NormalCloudRate && Time.time < BreathingCloudsSpawnRate - 12)
             {
-                //SpawnNormalClouds();
                 NormalCloudRate = Time.time + Random.Range(timeBetweenSpawn, TimeBetweenSpawnEndRate);
             }
         }
